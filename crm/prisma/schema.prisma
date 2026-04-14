@@ -1,0 +1,165 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  name      String
+  role      String   @default("staff") // admin, manager, staff
+  email     String?
+  phone     String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  assignedLeads Lead[]       @relation("AssignedTo")
+  notes         Note[]
+  callRecords   CallRecord[]
+  leadEvents    LeadEvent[]
+}
+
+model Lead {
+  id         String   @id @default(cuid())
+  name       String
+  phone      String   @unique
+  childName  String?
+  childAge   Int?
+  source     String // "elite_presence", "teen_etiquette", "kidiquette"
+  package    String?
+  message    String?
+  status     String   @default("NEW") // NEW, CONTACTED, APPOINTED, CONVERTED, LOST
+  assignedId String?
+  lostReason String?
+  priority   Int      @default(0)
+  utmSource  String?
+  utmMedium  String?
+  utmCampaign String?
+  sessionId  String?
+  formSubmitCount Int @default(1)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  assignedTo  User?        @relation("AssignedTo", fields: [assignedId], references: [id])
+  notes       Note[]
+  calls       CallRecord[]
+  events      LeadEvent[]
+  student     Student?
+}
+
+model LeadEvent {
+  id        String   @id @default(cuid())
+  leadId    String
+  type      String // STATUS_CHANGE, NOTE, CALL, ASSIGNMENT
+  payload   String? // JSON string
+  createdById String?
+  createdAt DateTime @default(now())
+
+  lead      Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  createdBy User? @relation(fields: [createdById], references: [id])
+}
+
+model Note {
+  id        String   @id @default(cuid())
+  content   String
+  leadId    String?
+  studentId String?
+  userId    String
+  createdAt DateTime @default(now())
+
+  lead    Lead?    @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  student Student? @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  user    User     @relation(fields: [userId], references: [id])
+}
+
+model CallRecord {
+  id          String   @id @default(cuid())
+  leadId      String
+  staffId     String
+  audioPath   String?
+  duration    Int?
+  transcript  String?
+  aiScore     Float?
+  aiAnalysis  String? // JSON: { strengths, weaknesses, suggestions, criteria }
+  outcome     String   @default("PENDING") // CONNECTED, NO_ANSWER, BUSY, CALLBACK, WRONG_NUMBER
+  notes       String?
+  createdAt   DateTime @default(now())
+
+  lead  Lead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  staff User @relation(fields: [staffId], references: [id])
+}
+
+model Student {
+  id         String   @id @default(cuid())
+  leadId     String   @unique
+  parentName String
+  childName  String?
+  phone      String
+  program    String // "elite_presence", "teen_etiquette", "kidiquette"
+  package    String
+  status     String   @default("ENROLLED") // ENROLLED, ACTIVE, COMPLETED, SUSPENDED
+  startDate  DateTime?
+  endDate    DateTime?
+  totalFee   Float
+  paidAmount Float    @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  lead      Lead      @relation(fields: [leadId], references: [id])
+  payments  Payment[]
+  schedules Schedule[]
+  notes     Note[]
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  studentId String
+  amount    Float
+  method    String   @default("cash") // cash, transfer, card
+  note      String?
+  createdAt DateTime @default(now())
+
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+}
+
+model Schedule {
+  id        String   @id @default(cuid())
+  studentId String
+  program   String
+  title     String
+  date      DateTime
+  startTime String
+  endTime   String
+  location  String?
+  status    String   @default("SCHEDULED") // SCHEDULED, COMPLETED, CANCELLED
+  createdAt DateTime @default(now())
+
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+}
+
+model AnalyticsEvent {
+  id          String   @id @default(cuid())
+  sessionId   String
+  page        String // "elite_presence", "teen_etiquette", "kidiquette"
+  event       String // PAGE_VIEW, SCROLL_DEPTH, CTA_CLICK, FORM_START, FORM_SUBMIT, TIME_ON_PAGE
+  data        String? // JSON payload
+  userAgent   String?
+  ip          String?
+  referrer    String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+  createdAt   DateTime @default(now())
+}
+
+model SystemConfig {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+}

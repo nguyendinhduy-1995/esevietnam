@@ -1,0 +1,112 @@
+/* ====== KIDIQUETTE — LIGHT MODE OVERRIDES ====== */
+:root {
+  --black: #fef9f0;
+  --dark: #faecd8;
+  --white: #1a1510;
+  --ivory: #2a2218;
+  --champagne: #8a6a3a;
+  --text-light: #3a3020;
+  --text-muted: #7a7060;
+  --glass-bg: rgba(245,158,66,0.04);
+  --glass-border: rgba(245,158,66,0.12);
+}
+
+body { background: var(--black); color: var(--text-light); }
+
+/* Navbar */
+.navbar.scrolled {
+  background: rgba(254,249,240,0.97);
+  border-bottom-color: rgba(245,158,66,0.12);
+}
+
+/* Hero */
+.hero {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(245,158,66,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #fef9f0 0%, #faecd8 100%);
+}
+.hero h1 { -webkit-text-fill-color: #1a1510; color: #1a1510; }
+.hero-badge { color: var(--accent); border-color: rgba(245,158,66,0.25); background: rgba(245,158,66,0.06); }
+.hero-subtitle { color: #8a6a3a; }
+.hero-tagline { color: #5a5040; }
+.hero-quote { color: #7a7060; }
+
+/* Glass cards */
+.glass-card {
+  background: rgba(255,255,255,0.7);
+  border-color: rgba(245,158,66,0.1);
+}
+.glass-card:hover {
+  border-color: rgba(245,158,66,0.3);
+  box-shadow: 0 8px 32px rgba(245,158,66,0.1);
+}
+
+/* Sections */
+.pain-section { background: linear-gradient(180deg, #faecd8 0%, #fef9f0 100%); }
+.modules-section { background: linear-gradient(180deg, #fef9f0 0%, #faecd8 50%, #fef9f0 100%); }
+.method-section { background: #faecd8; }
+.instructor-section { background: linear-gradient(180deg, #faecd8 0%, #fef9f0 100%); }
+.audience-section { background: #faecd8; }
+.pricing-section { background: linear-gradient(180deg, #fef9f0 0%, #faecd8 50%, #fef9f0 100%); }
+.gallery-section { background: #fef9f0; }
+.schedule-section { background: #faecd8; }
+.quote-section { background: radial-gradient(ellipse at 50% 50%, rgba(245,158,66,0.06) 0%, transparent 60%), #fef9f0; }
+.form-section { background: linear-gradient(180deg, #faecd8 0%, #fef9f0 100%); }
+.footer { background: #faecd8; border-top-color: rgba(245,158,66,0.1); }
+.footer-bottom { border-top-color: rgba(245,158,66,0.08); }
+
+/* Text */
+.section-title { color: #1a1510; }
+.section-label { color: var(--accent); }
+.pain-card h3, .module-content h3 { color: #2a2218; }
+.pain-card p, .module-content li { color: #5a5040; }
+.instructor-info h3 { color: #1a1510; }
+.instructor-creds li { color: #3a3020; border-bottom-color: rgba(245,158,66,0.08); }
+.instructor-quote { color: #6a5a3a; background: rgba(245,158,66,0.04); }
+.method-list li, .results-list li { color: #3a3020; }
+.results-list li { background: rgba(255,255,255,0.6); border-color: rgba(245,158,66,0.1); }
+.method-list li { border-bottom-color: rgba(245,158,66,0.06); }
+.audience-card h4, .schedule-item h4 { color: #2a2218; }
+
+/* Pricing */
+.pricing-name { color: #1a1510; }
+.pricing-price { color: var(--accent); }
+.pricing-features li { color: #3a3020; border-bottom-color: rgba(0,0,0,0.04); }
+.pricing-card.featured { box-shadow: 0 0 40px rgba(245,158,66,0.12); }
+.pricing-badge { color: #fff; }
+
+/* Form */
+.form-group input, .form-group select, .form-group textarea {
+  background: rgba(255,255,255,0.8);
+  border-color: rgba(245,158,66,0.15);
+  color: #1a1510;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: #9a9080; }
+.form-group select option { background: #faecd8; }
+.form-group label { color: #3a3020; }
+
+/* Buttons */
+.btn-primary { color: #1a1510; }
+.btn-outline { color: var(--accent); border-color: rgba(245,158,66,0.3); }
+.btn-outline:hover { background: rgba(245,158,66,0.06); }
+
+/* Dividers */
+.section-divider { background: linear-gradient(90deg, transparent, rgba(245,158,66,0.2), var(--accent), rgba(245,158,66,0.2), transparent); background-size: 200% 100%; }
+
+/* Mobile bar */
+.mobile-bar { background: rgba(254,249,240,0.97); border-top-color: rgba(245,158,66,0.12); }
+.mobile-hotline, .mobile-zalo { color: var(--accent); border-color: rgba(245,158,66,0.25); }
+
+/* Particles */
+#particles-canvas { opacity: 0.25; }
+.cursor-glow { background: radial-gradient(circle, rgba(245,158,66,0.06) 0%, transparent 70%); }
+
+/* Footer, Gallery, etc */
+.schedule-note { background: rgba(255,255,255,0.6); border-color: rgba(245,158,66,0.1); }
+.pain-quote blockquote { color: #2a2218; }
+.quote-section blockquote { color: #2a2218; }
+.footer h4 { color: var(--accent); }
+.footer p, .footer li { color: #5a5040; }
+.gallery-item::after { background: linear-gradient(180deg, transparent 50%, rgba(255,255,255,0.5) 100%); }
+.lightbox { background: rgba(255,255,255,0.95); }
+.lightbox-close { color: #1a1510; }
