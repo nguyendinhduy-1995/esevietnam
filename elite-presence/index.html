@@ -14,8 +14,6 @@
 </head>
 <body>
 
-<div class="cursor-glow"></div>
-
 <!-- NAVBAR -->
 <nav class="navbar" id="navbar">
   <div class="container">
@@ -23,6 +21,13 @@
       <img src="images/logo.png" alt="ESE Vietnam Logo">
       <span>ESE VIETNAM</span>
     </a>
+    <ul class="navbar-nav">
+      <li><a href="#about">Về Chương Trình</a></li>
+      <li><a href="#modules">Nội Dung</a></li>
+      <li><a href="#instructor">Giảng Viên</a></li>
+      <li><a href="#pricing">Chi Phí</a></li>
+      <li><a href="#contact">Liên Hệ</a></li>
+    </ul>
     <div class="navbar-cta">
       <a href="#register" class="btn-primary">Đăng Ký Ngay</a>
     </div>
@@ -32,21 +37,20 @@
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg-image"></div>
-  <canvas id="particles-canvas"></canvas>
-  <div class="hero-corner-bl"></div>
   <div class="hero-content">
     <div class="hero-badge">Trường Nghi Thức Xuất Sắc Việt Nam</div>
-    <h1 class="gold-text">ÉLITE PRESENCE</h1>
-    <p class="hero-subtitle">Phong Thái Hiện Diện Đẳng Cấp</p>
-    <p class="hero-tagline">Chương trình đào tạo Nghi thức &amp; Phong thái chuẩn quốc tế</p>
+    <h1>ÉLITE PRESENCE</h1>
+    <p class="hero-subtitle">The Art of Dining &amp; Social Etiquette</p>
+    <p class="hero-tagline">Phong Thái Hiện Diện Đẳng Cấp</p>
     <div class="gold-line"></div>
     <p class="hero-quote">
-      Trong những không gian quan trọng nhất,
-      người ta không đánh giá bạn qua lời nói.
-      Mà qua cách bạn hiện diện.
+      Bạn có thể thành công.<br>
+      Nhưng phong thái quyết định bạn được tôn trọng ở mức nào.<br>
+      Và trong những không gian quan trọng nhất…<br>
+      mọi thứ được thể hiện rõ nhất trên bàn tiệc.
     </p>
     <div class="hero-cta">
-      <a href="#register" class="btn-primary">Đăng Ký Lịch Học Gần Nhất ↓</a>
+      <a href="#register" class="btn-gold">Đăng Ký Lịch Học Gần Nhất</a>
     </div>
     <div class="stats-bar">
       <div class="stat-item">
@@ -63,45 +67,89 @@
       </div>
     </div>
   </div>
-  <div class="hero-scroll">◆ ◆ ◆</div>
+  <div class="hero-scroll">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M19 12l-7 7-7-7"/>
+    </svg>
+  </div>
 </section>
 
 <hr class="section-divider">
 
-<!-- 3-STEP APPROACH -->
-<section class="approach-section" id="approach">
+<!-- TRUTH SECTION (SỰ THẬT) -->
+<section class="truth-section" id="about">
   <div class="container">
-    <span class="section-label reveal">Phương pháp đào tạo</span>
-    <h2 class="section-title reveal">Không học lý thuyết suông — <span class="gold-text">Thực hành ngay</span></h2>
-    <p class="reveal" style="color:var(--text-muted);max-width:640px;margin:0 auto;font-size:1rem;">Chương trình được thiết kế để đảm bảo: Học xong là dùng được ngay.</p>
-    <div class="approach-grid">
-      <div class="glass-card approach-card reveal">
-        <div class="approach-num">01</div>
-        <h3>Lý thuyết có hệ thống</h3>
-        <p>Nắm vững nguyên tắc cốt lõi về phong thái, nghi thức bàn tiệc và giao tiếp trong không gian trang trọng theo chuẩn quốc tế.</p>
+    <div class="truth-grid">
+      <div class="truth-content reveal-left">
+        <span class="section-label" style="text-align:left;">Sự thật không ai nói</span>
+        <h3>Trong môi trường kinh doanh và xã hội hiện đại, những quyết định quan trọng không chỉ dựa trên năng lực.</h3>
+        <p>Chúng được hình thành từ ấn tượng ban đầu, cách bạn hiện diện, và cách bạn hành xử trong những không gian trang trọng.</p>
+        <ul class="highlight-list">
+          <li>Bữa tiệc với đối tác</li>
+          <li>Sự kiện networking</li>
+          <li>Những buổi gặp gỡ mang tính quyết định</li>
+        </ul>
+        <p>Không ai dạy bạn cách xuất hiện trong những không gian đó. Và cũng không ai nói bạn sai. Họ chỉ âm thầm đánh giá và quyết định mức độ tin tưởng dành cho bạn.</p>
+        <blockquote class="truth-quote">
+          "Một động tác nhỏ sai… có thể làm giảm giá trị của bạn trong mắt người khác."
+          <cite>Mrs Hương Nguyễn — Nhà sáng lập ESE Vietnam</cite>
+        </blockquote>
       </div>
-      <div class="glass-card approach-card reveal reveal-delay-1">
-        <div class="approach-num">02</div>
-        <h3>Thực hành thực tế</h3>
-        <p>Role-play tình huống, thực hành trực tiếp trên bàn tiệc tại môi trường nhà hàng/khách sạn tiêu chuẩn cao. Mô phỏng các tình huống thực tế.</p>
-      </div>
-      <div class="glass-card approach-card reveal reveal-delay-2">
-        <div class="approach-num">03</div>
-        <h3>Cá nhân hóa hành vi</h3>
-        <p>Video feedback cá nhân, phân tích chi tiết từng hành vi, điều chỉnh phong thái phù hợp từng người.</p>
+      <div class="truth-visual reveal-right reveal-delay-1">
+        <img src="images/class-1.jpeg" alt="Đào tạo phong thái tại ESE Vietnam" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
+<!-- THE ART OF PRESENCE -->
+<section class="pillars-section" id="approach">
+  <div class="container">
+    <span class="section-label reveal">Phương pháp đào tạo</span>
+    <h2 class="section-title reveal">Chương trình được xây dựng trên <span class="gold-text">3 trụ cột</span></h2>
+    <p class="section-subtitle reveal">THE ART OF PRESENCE không chỉ là một khóa học. Đây là chương trình được thiết kế để chuẩn hóa phong thái, nâng tầm cách bạn hiện diện, và giúp bạn kiểm soát mọi tình huống trên bàn tiệc.</p>
+    <div class="pillars-grid">
+      <div class="pillar-card reveal">
+        <div class="pillar-num">01</div>
+        <h3>Chuẩn mực quốc tế</h3>
+        <ul>
+          <li>Nghi thức bàn tiệc chuẩn</li>
+          <li>Quy tắc giao tiếp trong không gian trang trọng</li>
+          <li>Văn hóa ứng xử trong môi trường kinh doanh</li>
+        </ul>
+      </div>
+      <div class="pillar-card reveal reveal-delay-1">
+        <div class="pillar-num">02</div>
+        <h3>Thực hành thực tế</h3>
+        <ul>
+          <li>Role-play tình huống</li>
+          <li>Thực hành trực tiếp trên bàn tiệc</li>
+          <li>Mô phỏng các tình huống thực tế</li>
+        </ul>
+      </div>
+      <div class="pillar-card reveal reveal-delay-2">
+        <div class="pillar-num">03</div>
+        <h3>Cá nhân hóa hành vi</h3>
+        <ul>
+          <li>Video feedback cá nhân</li>
+          <li>Phân tích chi tiết từng hành vi</li>
+          <li>Điều chỉnh phong thái phù hợp từng người</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
 <!-- 4 MODULES -->
 <section class="modules-section" id="modules">
   <div class="container">
     <span class="section-label reveal">Nội dung chương trình</span>
-    <h2 class="section-title reveal" style="margin-bottom:48px;">4 Module <span class="gold-text">Chuyên Sâu</span></h2>
-    <div class="module-item reveal">
-      <div class="module-num">01</div>
-      <div class="module-content">
+    <h2 class="section-title reveal">4 Module Chuyên Sâu</h2>
+    <div class="modules-grid">
+      <div class="module-card reveal">
+        <span class="module-label">Module 1</span>
         <h3>Phong thái &amp; Hiện diện</h3>
         <ul>
           <li>Dáng đi – đứng – ngồi chuẩn mực</li>
@@ -109,10 +157,8 @@
           <li>Cách tạo ấn tượng ngay từ lần gặp đầu tiên</li>
         </ul>
       </div>
-    </div>
-    <div class="module-item reveal">
-      <div class="module-num">02</div>
-      <div class="module-content">
+      <div class="module-card reveal reveal-delay-1">
+        <span class="module-label">Module 2</span>
         <h3>Nghi thức bàn tiệc chuẩn quốc tế</h3>
         <ul>
           <li>Cách sử dụng dao – dĩa – ly – tách</li>
@@ -121,10 +167,8 @@
           <li>Tín hiệu trên bàn tiệc</li>
         </ul>
       </div>
-    </div>
-    <div class="module-item reveal">
-      <div class="module-num">03</div>
-      <div class="module-content">
+      <div class="module-card reveal">
+        <span class="module-label">Module 3</span>
         <h3>Giao tiếp trên bàn tiệc</h3>
         <ul>
           <li>Cách bắt chuyện tự nhiên</li>
@@ -132,10 +176,8 @@
           <li>Xử lý tình huống khó xử</li>
         </ul>
       </div>
-    </div>
-    <div class="module-item reveal">
-      <div class="module-num">04</div>
-      <div class="module-content">
+      <div class="module-card reveal reveal-delay-1">
+        <span class="module-label">Module 4</span>
         <h3>Thực hành &amp; Mô phỏng</h3>
         <ul>
           <li>Thực hành trong không gian bàn tiệc thật</li>
@@ -150,11 +192,11 @@
 <!-- METHODOLOGY + RESULTS -->
 <section class="method-section" id="method">
   <div class="container">
-    <span class="section-label reveal" style="text-align:center;display:block;">Kết quả đạt được</span>
-    <h2 class="section-title reveal" style="text-align:center;">Sau chương trình <span class="gold-text">bạn sẽ…</span></h2>
+    <span class="section-label reveal">Kết quả đạt được</span>
+    <h2 class="section-title reveal">Chương trình được thiết kế để đảm bảo:<br><span class="gold-text">Học xong là dùng được ngay.</span></h2>
     <div class="method-grid">
-      <div class="reveal-left">
-        <h3 style="font-size:1.1rem;margin-bottom:20px;color:var(--champagne);">Phương pháp đào tạo</h3>
+      <div class="method-col reveal-left">
+        <h3>Phương pháp đào tạo</h3>
         <ul class="method-list">
           <li>Thực hành trực tiếp (không học lý thuyết suông)</li>
           <li>Video feedback cá nhân</li>
@@ -162,8 +204,8 @@
           <li>Mô phỏng tình huống thực tế</li>
         </ul>
       </div>
-      <div class="reveal-right reveal-delay-1">
-        <h3 style="font-size:1.1rem;margin-bottom:20px;color:var(--champagne);">Kết quả cam kết</h3>
+      <div class="method-col reveal-right reveal-delay-1">
+        <h3>Sau chương trình bạn sẽ…</h3>
         <ul class="results-list">
           <li>Tự tin trong mọi không gian trang trọng</li>
           <li>Biết chính xác nên làm gì trong từng tình huống</li>
@@ -179,28 +221,29 @@
 <!-- DIFFERENTIATORS -->
 <section class="diff-section" id="differentiator">
   <div class="container">
-    <span class="section-label reveal" style="text-align:center;display:block;">Điểm khác biệt</span>
-    <h2 class="section-title reveal" style="text-align:center;">Không chỉ biết — <span class="gold-text">Mà là làm đúng một cách tự nhiên</span></h2>
+    <span class="section-label reveal">Điểm khác biệt</span>
+    <h2 class="section-title reveal">Không chỉ biết — <span class="gold-text">Mà là làm đúng một cách tự nhiên</span></h2>
+    <p class="section-subtitle reveal">Không chỉ là đào tạo, chúng tôi giúp bạn tập trung vào chuyển hóa hành vi thực tế.</p>
     <div class="diff-grid">
-      <div class="glass-card diff-card reveal">
+      <div class="diff-card reveal">
         <span class="diff-icon">I</span>
         <h4>Tiêu chí đánh giá rõ ràng</h4>
         <p>Mỗi hành vi được đánh giá theo tiêu chuẩn quốc tế, giúp bạn biết chính xác mình đang ở đâu.</p>
       </div>
-      <div class="glass-card diff-card reveal reveal-delay-1">
+      <div class="diff-card reveal reveal-delay-1">
         <span class="diff-icon">II</span>
         <h4>Video phân tích cá nhân</h4>
         <p>Quay video trước và sau, phân tích chi tiết từng hành vi để bạn thấy rõ sự thay đổi.</p>
       </div>
-      <div class="glass-card diff-card reveal reveal-delay-2">
+      <div class="diff-card reveal reveal-delay-2">
         <span class="diff-icon">III</span>
         <h4>Checklist áp dụng sau khóa</h4>
         <p>Bộ tài liệu chi tiết giúp bạn duy trì và phát triển phong thái sau khi kết thúc chương trình.</p>
       </div>
-      <div class="glass-card diff-card reveal reveal-delay-3">
+      <div class="diff-card reveal reveal-delay-3">
         <span class="diff-icon">IV</span>
-        <h4>Hướng dẫn thực tế</h4>
-        <p>Không chỉ biết — mà là hướng dẫn cách sử dụng trong từng tình huống cụ thể.</p>
+        <h4>Hướng dẫn sử dụng thực tế</h4>
+        <p>Không chỉ biết — mà là hướng dẫn cách sử dụng trong từng tình huống cụ thể ngoài đời.</p>
       </div>
     </div>
   </div>
@@ -211,15 +254,15 @@
 <!-- INSTRUCTOR -->
 <section class="instructor-section" id="instructor">
   <div class="container">
-    <span class="section-label reveal" style="text-align:center;display:block;">Chuyên gia đào tạo</span>
-    <h2 class="section-title reveal" style="text-align:center;margin-bottom:48px;">Giảng viên <span class="gold-text">Quốc tế</span></h2>
+    <span class="section-label reveal" style="text-align:center;display:block;">Giảng viên chính</span>
+    <h2 class="section-title reveal" style="margin-bottom:56px;">Chuyên gia Nghi thức <span class="gold-text">Quốc tế</span></h2>
     <div class="instructor-grid">
       <div class="instructor-img reveal-left">
         <img src="images/instructor.jpeg" alt="Mrs Hương Nguyễn — Chuyên gia Nghi thức Quốc tế" loading="lazy">
       </div>
       <div class="instructor-info reveal-right reveal-delay-1">
         <h3>Mrs Hương Nguyễn</h3>
-        <p class="instructor-role">Chuyên gia Nghi thức Quốc tế — Nhà sáng lập ESE Vietnam</p>
+        <p class="instructor-role">Chuyên gia Nghi thức Quốc tế — Nhà sáng lập &amp; Hiệu trưởng ESE Vietnam</p>
         <ul class="instructor-creds">
           <li>Được đào tạo và chứng nhận theo tiêu chuẩn Anh Quốc</li>
           <li>Kinh nghiệm nhiều năm trong lĩnh vực đào tạo Phong thái &amp; Nghi thức quốc tế</li>
@@ -233,25 +276,47 @@
   </div>
 </section>
 
+<!-- ABOUT ESE -->
+<section class="truth-section" id="about-ese">
+  <div class="container">
+    <div class="truth-grid">
+      <div class="truth-visual reveal-left">
+        <img src="images/dining-1.jpeg" alt="Không gian đào tạo ESE Vietnam" loading="lazy">
+      </div>
+      <div class="truth-content reveal-right reveal-delay-1">
+        <span class="section-label" style="text-align:left;">Đơn vị tổ chức</span>
+        <h3>Trường Nghi Thức Xuất Sắc Việt Nam</h3>
+        <p>Trường Nghi Thức Xuất Sắc Việt Nam (ESE) là đơn vị đào tạo chuyên sâu về Nghi thức quốc tế, Phong thái cá nhân, Giao tiếp &amp; hình ảnh trong môi trường cao cấp.</p>
+        <ul class="highlight-list">
+          <li>Chuẩn mực quốc tế</li>
+          <li>Ứng dụng thực tế</li>
+          <li>Tập trung chuyển hóa hành vi</li>
+        </ul>
+        <p>ESE đã triển khai đào tạo cho doanh nghiệp, cá nhân cấp quản lý, nhóm khách hàng yêu cầu tiêu chuẩn cao về hình ảnh &amp; phong thái.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TARGET AUDIENCE -->
 <section class="audience-section" id="audience">
   <div class="container">
     <span class="section-label reveal">Đối tượng phù hợp</span>
     <h2 class="section-title reveal">Chương trình <span class="gold-text">dành cho</span></h2>
     <div class="audience-grid">
-      <div class="glass-card audience-card reveal">
+      <div class="audience-card reveal">
         <h4>Doanh nhân &amp; Nhà quản lý</h4>
         <p>Những người cần phong thái chuyên nghiệp trong mọi không gian kinh doanh</p>
       </div>
-      <div class="glass-card audience-card reveal reveal-delay-1">
+      <div class="audience-card reveal reveal-delay-1">
         <h4>Nhân sự đối ngoại, Sales, CSKH</h4>
         <p>Đội ngũ tiếp xúc khách hàng cần tạo ấn tượng chuyên nghiệp</p>
       </div>
-      <div class="glass-card audience-card reveal reveal-delay-2">
+      <div class="audience-card reveal reveal-delay-2">
         <h4>Người tham gia sự kiện</h4>
         <p>Thường xuyên tham gia sự kiện, tiếp khách, bàn tiệc trang trọng</p>
       </div>
-      <div class="glass-card audience-card reveal reveal-delay-3">
+      <div class="audience-card reveal reveal-delay-3">
         <h4>Cá nhân muốn nâng tầm</h4>
         <p>Muốn nâng tầm hình ảnh &amp; phong thái cá nhân trong cuộc sống</p>
       </div>
@@ -259,13 +324,15 @@
   </div>
 </section>
 
+<hr class="section-divider">
+
 <!-- PRICING -->
 <section class="pricing-section" id="pricing">
   <div class="container">
     <span class="section-label reveal">Chi phí chương trình</span>
-    <h2 class="section-title reveal">Chọn gói <span class="gold-text">phù hợp với bạn</span></h2>
+    <h2 class="section-title reveal">Chọn gói phù hợp với bạn</h2>
     <div class="pricing-grid">
-      <div class="glass-card pricing-card reveal-scale">
+      <div class="pricing-card reveal-scale">
         <div class="pricing-tier">Gói 1</div>
         <div class="pricing-name">Standard Experience</div>
         <div class="pricing-desc">Học nhóm — trải nghiệm chuẩn</div>
@@ -282,7 +349,7 @@
         </ul>
         <a href="#register" class="btn-outline">Đăng Ký Ngay</a>
       </div>
-      <div class="glass-card pricing-card featured reveal-scale reveal-delay-1">
+      <div class="pricing-card featured reveal-scale reveal-delay-1">
         <div class="pricing-badge">Được chọn nhiều nhất</div>
         <div class="pricing-tier">Gói 2</div>
         <div class="pricing-name">Premium Experience</div>
@@ -298,13 +365,13 @@
           <li>Checklist nâng cao</li>
           <li>1–2 buổi follow-up online</li>
         </ul>
-        <a href="#register" class="btn-primary">Đăng Ký Ngay</a>
+        <a href="#register" class="btn-gold">Đăng Ký Ngay</a>
       </div>
-      <div class="glass-card pricing-card reveal-scale reveal-delay-2">
+      <div class="pricing-card reveal-scale reveal-delay-2">
         <div class="pricing-tier">Gói 3</div>
         <div class="pricing-name">Private Coaching</div>
         <div class="pricing-desc">Coaching 1:1 — cá nhân hóa toàn bộ</div>
-        <div class="pricing-price" style="font-size:1.5rem;">Liên hệ</div>
+        <div class="pricing-price" style="font-size:1.4rem;">Liên hệ</div>
         <div class="pricing-unit">&nbsp;</div>
         <ul class="pricing-features">
           <li>Huấn luyện riêng 1:1</li>
@@ -324,38 +391,38 @@
 <!-- COMMITMENT VALUES -->
 <section class="commitment-section" id="commitment">
   <div class="container">
-    <span class="section-label reveal" style="text-align:center;display:block;">Cam kết giá trị</span>
-    <h2 class="section-title reveal" style="text-align:center;">Bạn sẽ <span class="gold-text">nhận được</span></h2>
+    <span class="section-label reveal">Cam kết giá trị</span>
+    <h2 class="section-title reveal">Bạn sẽ <span class="gold-text">nhận được</span></h2>
     <div class="commitment-grid">
-      <div class="glass-card commitment-item reveal">
+      <div class="commitment-item reveal">
         <div class="commit-icon">◇</div>
         <h4>Thực hành trên bàn tiệc thật</h4>
-        <p>Không gian đào tạo cao cấp, kết hợp thực hành trực tiếp</p>
+        <p>Không gian đào tạo cao cấp, kết hợp thực hành trực tiếp tại nhà hàng/khách sạn</p>
       </div>
-      <div class="glass-card commitment-item reveal reveal-delay-1">
+      <div class="commitment-item reveal reveal-delay-1">
         <div class="commit-icon">◇</div>
         <h4>Tài liệu hướng dẫn chi tiết</h4>
         <p>Bộ tài liệu đầy đủ để bạn ôn tập và áp dụng sau khóa</p>
       </div>
-      <div class="glass-card commitment-item reveal reveal-delay-2">
+      <div class="commitment-item reveal reveal-delay-2">
         <div class="commit-icon">◇</div>
         <h4>Chứng chỉ hoàn thành</h4>
-        <p>Chứng chỉ xác nhận hoàn thành chương trình đào tạo</p>
+        <p>Chứng chỉ xác nhận hoàn thành chương trình đào tạo từ ESE Vietnam</p>
       </div>
-      <div class="glass-card commitment-item reveal">
+      <div class="commitment-item reveal">
         <div class="commit-icon">◇</div>
         <h4>Số lượng giới hạn</h4>
-        <p>Giới hạn học viên để đảm bảo chất lượng đào tạo tối ưu</p>
+        <p>Giới hạn học viên để đảm bảo chất lượng đào tạo tối ưu cho từng người</p>
       </div>
-      <div class="glass-card commitment-item reveal reveal-delay-1">
+      <div class="commitment-item reveal reveal-delay-1">
         <div class="commit-icon">◇</div>
         <h4>Checklist hành vi sau khóa</h4>
-        <p>Bộ checklist chi tiết giúp bạn duy trì phong thái hàng ngày</p>
+        <p>Bộ checklist chi tiết giúp bạn duy trì phong thái hàng ngày trong thực tế</p>
       </div>
-      <div class="glass-card commitment-item reveal reveal-delay-2">
+      <div class="commitment-item reveal reveal-delay-2">
         <div class="commit-icon">◇</div>
         <h4>Video feedback cá nhân</h4>
-        <p>Nhận video phân tích chi tiết hành vi (theo gói đã chọn)</p>
+        <p>Nhận video phân tích chi tiết hành vi theo gói đã chọn</p>
       </div>
     </div>
   </div>
@@ -364,9 +431,9 @@
 <!-- SCHEDULE -->
 <section class="schedule-section" id="schedule">
   <div class="container">
-    <span class="section-label reveal" style="text-align:center;display:block;">Thông tin chương trình</span>
-    <h2 class="section-title reveal" style="text-align:center;margin-bottom:48px;">Lịch học <span class="gold-text">&amp; Địa điểm</span></h2>
-    <div class="schedule-card glass-card reveal">
+    <span class="section-label reveal">Thông tin chương trình</span>
+    <h2 class="section-title reveal">Lịch học <span class="gold-text">&amp; Địa điểm</span></h2>
+    <div class="schedule-card reveal">
       <div class="schedule-items">
         <div class="schedule-item">
           <h4>Thời lượng</h4>
@@ -418,7 +485,7 @@
     </blockquote>
     <div class="gold-line reveal"></div>
     <div style="margin-top:40px;" class="reveal">
-      <a href="#register" class="btn-primary">Đăng Ký Lớp Học Gần Nhất</a>
+      <a href="#register" class="btn-gold">Đăng Ký Lớp Học Gần Nhất</a>
     </div>
   </div>
 </section>
@@ -428,7 +495,7 @@
   <div class="container">
     <span class="section-label reveal">Đăng ký</span>
     <h2 class="section-title reveal">Nhận <span class="gold-text">lịch học gần nhất</span></h2>
-    <p class="reveal" style="color:var(--text-muted);max-width:500px;margin:0 auto 8px;font-size:0.92rem;">Điền thông tin bên dưới để nhận lịch học, được tư vấn lộ trình phù hợp và thông tin chi tiết chương trình.</p>
+    <p class="section-subtitle reveal">Điền thông tin bên dưới để nhận lịch học, được tư vấn lộ trình phù hợp và thông tin chi tiết chương trình.</p>
     <div class="form-wrapper">
       <form id="registrationForm" class="reveal">
         <div class="form-group">
@@ -509,11 +576,11 @@
   </div>
   <div class="mobile-bar-bottom">
     <a href="tel:0824217555" class="mobile-hotline">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       Hotline
     </a>
     <a href="https://zalo.me/0824217555" class="mobile-zalo" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
       Zalo
     </a>
   </div>
