@@ -372,16 +372,70 @@
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="cta-section" id="cta-final">
+<!-- REGISTRATION FORM -->
+<section class="form-section" id="register">
   <div class="container">
-    <div class="accent-line reveal"></div>
+    <span class="section-label reveal" style="text-align:center;display:block;">Đăng ký</span>
+    <h2 class="section-title reveal" style="text-align:center;">Cho con một <span class="accent-text">khởi đầu đẹp</span></h2>
+    <p class="reveal" style="color:var(--text-muted);max-width:500px;margin:0 auto 8px;font-size:0.95rem;text-align:center;">Điền thông tin bên dưới, chúng tôi sẽ liên hệ tư vấn trong 24h.</p>
+    <div class="form-wrapper">
+      <form id="registrationForm" class="reveal">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="form-parent">Họ tên phụ huynh *</label>
+            <input type="text" id="form-parent" placeholder="Nguyễn Văn A" required>
+            <div class="form-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="form-child">Tên con *</label>
+            <input type="text" id="form-child" placeholder="Bé Minh" required>
+            <div class="form-error"></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="form-phone">Số điện thoại *</label>
+            <input type="tel" id="form-phone" placeholder="0912 345 678" required>
+            <div class="form-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="form-age">Tuổi con</label>
+            <input type="number" id="form-age" placeholder="8" min="4" max="15">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="form-package">Gói quan tâm</label>
+          <select id="form-package">
+            <option value="">— Chọn gói —</option>
+            <option value="standard">Standard Experience — 3.200.000đ</option>
+            <option value="premium">Premium Experience — 5.200.000đ</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="form-message">Lời nhắn</label>
+          <textarea id="form-message" placeholder="Bạn muốn chúng tôi biết điều gì?"></textarea>
+        </div>
+        <button type="submit" class="btn-zalo" style="width:100%;">Gửi Đăng Ký</button>
+      </form>
+      <div id="form-success" class="form-success">
+        <h3>🎉 Đăng ký thành công!</h3>
+        <p>Cảm ơn bạn đã quan tâm đến KIDIQUETTE Mùa Hè 2026.<br>Chúng tôi sẽ liên hệ tư vấn trong 24 giờ tới.</p>
+        <div style="margin-top:24px;">
+          <a href="tel:0824217555" class="btn-outline">Gọi ngay: 08 242 17555</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="container">
     <blockquote class="reveal">
       Những gì con học hôm nay sẽ đi cùng con<br>trong <strong>cách cư xử mỗi ngày</strong>.
     </blockquote>
     <p class="cta-urgency reveal">Số lượng chỗ giới hạn để đảm bảo từng học viên được chỉnh sửa kỹ.</p>
-    <div class="accent-line reveal"></div>
-    <div style="margin-top:32px;" class="reveal">
+    <div style="margin-top:24px;" class="reveal">
       <a href="https://zalo.me/0824217555" class="btn-zalo" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
         Đăng Ký Qua Zalo Ngay
@@ -389,6 +443,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- FOOTER -->
 <footer class="footer" id="contact">

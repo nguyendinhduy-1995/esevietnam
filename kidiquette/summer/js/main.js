@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initCursorGlow();
   initMagneticButtons();
   initBounceCards();
+  initForm();
 });
 
 /* ====== NAVBAR SCROLL ====== */
@@ -203,6 +204,60 @@ function initSmoothScroll() {
       if (target) { e.preventDefault(); window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' }); trackEvent('CTA_CLICK', { target: href }); }
     });
   });
+}
+
+/* ====== REGISTRATION FORM ====== */
+function initForm() {
+  var form = document.getElementById('registrationForm');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var valid = true;
+    clearErrors();
+    var parent = form.querySelector('#form-parent');
+    var child = form.querySelector('#form-child');
+    var phone = form.querySelector('#form-phone');
+    if (!parent.value.trim()) { showError(parent, 'Vui lòng nhập họ tên phụ huynh'); valid = false; }
+    if (!child.value.trim()) { showError(child, 'Vui lòng nhập tên con'); valid = false; }
+    var phoneVal = phone.value.trim().replace(/\s/g, '');
+    if (!phoneVal || !/^0\d{9}$/.test(phoneVal)) { showError(phone, 'Số điện thoại phải có 10 chữ số và bắt đầu bằng 0'); valid = false; }
+    if (!valid) return;
+    var submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Đang gửi...'; }
+    var formData = {
+      name: parent.value.trim(), phone: phoneVal, childName: child.value.trim(),
+      childAge: (form.querySelector('#form-age') || {}).value || '',
+      package: form.querySelector('#form-package') ? form.querySelector('#form-package').value : '',
+      message: form.querySelector('#form-message') ? form.querySelector('#form-message').value.trim() : '',
+      source: window.__esePage || 'kidiquette_summer',
+      sessionId: sessionStorage.getItem('ese_session_id') || '',
+      utmSource: getUTM('utm_source'), utmMedium: getUTM('utm_medium'), utmCampaign: getUTM('utm_campaign')
+    };
+    fetch((window.__eseCrmUrl || '') + '/api/landing/register', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(formData)
+    }).then(function(res) { return res.json(); }).then(function(data) {
+      if (data.success) { showSuccess(); } else {
+        alert(data.error || 'Có lỗi xảy ra, vui lòng thử lại.');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Gửi Đăng Ký'; }
+      }
+    }).catch(function() { showSuccess(); });
+    function showSuccess() {
+      form.style.display = 'none';
+      var success = document.getElementById('form-success');
+      if (success) success.classList.add('active');
+      trackEvent('FORM_SUBMIT', formData);
+    }
+  });
+}
+function showError(input, message) {
+  var group = input.closest('.form-group');
+  var error = group.querySelector('.form-error');
+  if (error) { error.textContent = message; error.style.display = 'block'; }
+  input.style.borderColor = '#ff7979';
+}
+function clearErrors() {
+  document.querySelectorAll('.form-error').forEach(function (el) { el.style.display = 'none'; });
+  document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(function (el) { el.style.borderColor = ''; });
 }
 
 /* ====== TRACKING ====== */

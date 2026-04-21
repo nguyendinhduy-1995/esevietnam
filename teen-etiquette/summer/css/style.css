@@ -410,6 +410,31 @@ a:hover { color: var(--purple); }
 .testimonial-meta { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; display: block; }
 
 /* ====== FAQ ====== */
+/* ====== REGISTRATION FORM ====== */
+.form-section { padding: var(--section-py) 0; background: #fff; text-align: center; }
+.form-wrapper {
+  max-width: 620px; margin: 28px auto 0; background: var(--off-white); border: 1.5px solid var(--border-light);
+  border-radius: var(--radius); padding: 36px 32px; position: relative;
+}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { margin-bottom: 16px; text-align: left; }
+.form-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 12px 16px; border: 1.5px solid var(--border-light); border-radius: 14px;
+  font-family: var(--font-body); font-size: 0.88rem; color: var(--text-dark); background: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s; outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  border-color: var(--purple); box-shadow: 0 0 0 3px rgba(139,92,246,0.06);
+}
+.form-group textarea { min-height: 80px; resize: vertical; }
+.form-group select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.form-error { display: none; font-size: 0.75rem; color: #ef4444; margin-top: 4px; font-weight: 600; }
+.form-success { display: none; text-align: center; padding: 40px 24px; animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+.form-success.active { display: block; }
+.form-success h3 { font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-dark); margin-bottom: 10px; }
+.form-success p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; }
+
 .faq-section { padding: var(--section-py) 0; background: var(--off-white); }
 .faq-list { max-width: 700px; margin: 36px auto 0; }
 .faq-item { border-bottom: 1px solid var(--border-light); }
