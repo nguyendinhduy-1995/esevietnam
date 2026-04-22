@@ -12,7 +12,25 @@ document.addEventListener('DOMContentLoaded', function () {
   initForm();
   initHero3DTilt();
   initExitPopup();
+  initTypewriter();
 });
+
+/* ====== TYPEWRITER ====== */
+function initTypewriter() {
+  var el = document.getElementById('heroTypewriter');
+  if (!el) return;
+  var text = 'Con thông minh nhưng còn nhút nhát, thiếu tự tin và chưa có phong thái?';
+  var i = 0;
+  var speed = 45;
+  function type() {
+    if (i < text.length) {
+      el.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  setTimeout(type, 800);
+}
 
 /* ====== 3D HERO TILT ====== */
 function initHero3DTilt() {
