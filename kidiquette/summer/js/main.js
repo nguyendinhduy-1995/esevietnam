@@ -10,7 +10,45 @@ document.addEventListener('DOMContentLoaded', function () {
   initMagneticButtons();
   initBounceCards();
   initForm();
+  initHero3DTilt();
 });
+
+/* ====== 3D HERO TILT ====== */
+function initHero3DTilt() {
+  if (window.innerWidth <= 768) return;
+  var card = document.querySelector('.hero-card-3d');
+  var wrapper = document.getElementById('hero3d');
+  if (!card || !wrapper) return;
+  var shapes = document.querySelectorAll('.hero-shape');
+  var targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+  var active = false;
+
+  wrapper.addEventListener('mouseenter', function() { active = true; });
+  wrapper.addEventListener('mouseleave', function() {
+    active = false; targetX = 0; targetY = 0;
+  });
+  wrapper.addEventListener('mousemove', function(e) {
+    if (!active) return;
+    var rect = wrapper.getBoundingClientRect();
+    var x = (e.clientX - rect.left) / rect.width - 0.5;
+    var y = (e.clientY - rect.top) / rect.height - 0.5;
+    targetX = y * -8;
+    targetY = x * 8;
+  });
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+    card.style.transform = 'rotateX(' + currentX + 'deg) rotateY(' + currentY + 'deg)';
+    shapes.forEach(function(shape, i) {
+      var factor = 1 + (i * 0.3);
+      shape.style.marginLeft = (currentY * factor * 2) + 'px';
+      shape.style.marginTop = (currentX * factor * -2) + 'px';
+    });
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
 
 /* ====== NAVBAR SCROLL ====== */
 function initNavbar() {
