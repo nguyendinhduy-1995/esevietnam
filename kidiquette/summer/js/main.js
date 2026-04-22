@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initBounceCards();
   initForm();
   initHero3DTilt();
+  initExitPopup();
 });
 
 /* ====== 3D HERO TILT ====== */
@@ -316,3 +317,37 @@ function trackEvent(eventName, data) {
   try { if (navigator.sendBeacon) navigator.sendBeacon(crmUrl + '/api/track', JSON.stringify(payload)); else fetch(crmUrl + '/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), keepalive: true }).catch(function() {}); } catch(e) {}
 }
 function getUTM(param) { try { return new URLSearchParams(window.location.search).get(param) || ''; } catch (e) { return ''; } }
+
+/* ====== EXIT INTENT POPUP ====== */
+function initExitPopup() {
+  if (window.innerWidth <= 768) return;
+  var popup = document.getElementById('exitPopup');
+  if (!popup) return;
+  var shown = false;
+  var armed = false;
+
+  setTimeout(function() { armed = true; }, 10000);
+
+  document.addEventListener('mouseout', function(e) {
+    if (shown || !armed) return;
+    if (e.clientY > 10) return;
+    if (sessionStorage.getItem('ese_exit_shown')) return;
+    shown = true;
+    popup.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    sessionStorage.setItem('ese_exit_shown', '1');
+    trackEvent('EXIT_POPUP_SHOWN');
+  });
+
+  var overlay = document.getElementById('exitOverlay');
+  var closeBtn = document.getElementById('exitClose');
+  function closePopup() {
+    popup.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  if (overlay) overlay.addEventListener('click', closePopup);
+  if (closeBtn) closeBtn.addEventListener('click', closePopup);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
+  });
+}
