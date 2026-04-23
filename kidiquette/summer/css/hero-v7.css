@@ -40,7 +40,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: calc(50% + 60px) center;
+  object-position: calc(70% + 90px) bottom;
   display: block;
 }
 

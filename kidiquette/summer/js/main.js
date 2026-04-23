@@ -79,6 +79,22 @@ function initNavbar() {
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  /* Mobile hamburger toggle */
+  var toggle = document.getElementById('navbarToggle');
+  var nav = document.getElementById('navbarNav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      toggle.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        toggle.classList.remove('active');
+        nav.classList.remove('open');
+      });
+    });
+  }
 }
 
 /* ====== REVEAL ON SCROLL ====== */
