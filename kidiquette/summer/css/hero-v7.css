@@ -260,15 +260,18 @@
 
 /* ---------- BENEFITS (horizontal 4-column row) ---------- */
 .hero-v7__benefits-wrapper {
-  margin-bottom: 20px;
-  max-width: 520px;
+  margin-bottom: 24px;
+  max-width: 560px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(201, 163, 95, 0.35);
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
 
 .hero-v7__divider {
-  border: none;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(216,198,163,0.1) 0%, rgba(216,198,163,0.6) 50%, rgba(216,198,163,0.1) 100%);
-  margin: 12px 0;
+  display: none;
 }
 
 .hero-v7__benefits {
