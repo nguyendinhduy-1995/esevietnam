@@ -129,7 +129,8 @@
 
 /* ---------- INNER CONTENT (constrained width) ---------- */
 .hero-v7__inner {
-  max-width: 800px;
+  width: 50%;
+  max-width: 680px;
   padding-left: 2%;
   margin-left: -30px;
 }
@@ -180,10 +181,11 @@
 .hero-v7__title {
   font-family: var(--font-cinzel);
   font-weight: 500;
-  font-size: 105px;
+  font-size: clamp(64px, 5.5vw, 92px);
   letter-spacing: 0.03em;
   line-height: 0.95;
   margin: 0;
+  white-space: nowrap;
   text-transform: uppercase;
   background: linear-gradient(90deg, 
     #9C7224 0%,
@@ -434,6 +436,7 @@
   }
 
   .hero-v7__inner {
+    width: 100%;
     max-width: 100%;
     margin-left: 0;
     margin-top: -60px;
