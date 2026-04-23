@@ -27,6 +27,7 @@
   min-height: 680px;
   max-height: 960px;
   overflow: hidden;
+  background-color: var(--hero-bg);
 }
 
 /* Full-width background image */
@@ -42,6 +43,7 @@
   object-fit: cover;
   object-position: calc(70% + 90px) bottom;
   display: block;
+  mix-blend-mode: multiply;
 }
 
 /* Cream overlay — warm gradient left→right + golden sparkle bokeh */
