@@ -584,17 +584,18 @@
   }
 
   .hero-v7__benefits {
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 14px;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
   }
 
   .hero-v7__benefit {
-    font-size: 15px;
+    font-size: 14px;
     white-space: normal;
     text-align: center;
-    padding-left: 0;
+    padding: 12px 6px;
   }
 
   .hero-v7__benefit:not(:last-child)::after {
