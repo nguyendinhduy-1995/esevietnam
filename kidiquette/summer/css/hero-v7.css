@@ -539,21 +539,16 @@
 
 @media (max-width: 768px) {
   .hero-v7__bg {
-    height: 380px;
-  }
-  
-  .hero-v7__bg img {
-    object-position: 85% bottom;
-    transform: scale(1.4);
-    transform-origin: 85% bottom;
+    display: none;
   }
 
   .hero-v7__content {
-    padding: 0 20px 32px;
+    padding: 20px 20px 32px;
   }
 
   .hero-v7__inner {
-    padding-top: 14px;
+    margin-top: 0;
+    padding-top: 24px;
   }
 
   .hero-v7__quote-wrap {
