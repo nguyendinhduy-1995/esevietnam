@@ -60,9 +60,9 @@
     /* Main cream gradient left→right */
     linear-gradient(90deg,
       rgba(248,246,241,1) 0%,
-      rgba(248,246,241,1) 30%,
-      rgba(248,246,241,0.8) 45%,
-      transparent 65%
+      rgba(248,246,241,1) 50%,
+      rgba(248,246,241,0.85) 60%,
+      transparent 80%
     );
   pointer-events: none;
 }
