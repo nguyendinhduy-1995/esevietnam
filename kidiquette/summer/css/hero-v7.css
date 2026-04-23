@@ -3,7 +3,7 @@
 
 /* ---------- HERO DESIGN TOKENS ---------- */
 :root {
-  --hero-bg: #F8F6F1;
+  --hero-bg: #F4EFE6;
   --hero-gold: #C9A35F;
   --hero-gold-deep: #B88A3C;
   --hero-gold-light: #D9B874;
@@ -59,9 +59,9 @@
     radial-gradient(circle 180px at 5% 5%, rgba(232,197,71,0.10) 0%, transparent 70%),
     /* Main cream gradient left→right */
     linear-gradient(90deg,
-      rgba(248,246,241,1) 0%,
-      rgba(248,246,241,1) 50%,
-      rgba(248,246,241,0.85) 60%,
+      rgba(244,239,230,1) 0%,
+      rgba(244,239,230,1) 50%,
+      rgba(244,239,230,0.85) 60%,
       transparent 80%
     );
   pointer-events: none;
