@@ -238,14 +238,19 @@
 
 /* ---------- SUBHEADLINE ---------- */
 .hero-v7__subheadline {
-  font-family: var(--font-cormorant);
-  font-weight: 800;
-  font-size: 20px;
-  letter-spacing: 0.1em;
-  line-height: 1.4;
+  font-family: var(--font-cinzel);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
   text-transform: uppercase;
-  margin: 0 0 16px 0;
-  color: #825B15;
+  margin: 0 0 20px 0;
+  color: #1A1715;
+  background: rgba(201, 163, 95, 0.15);
+  padding: 8px 20px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid rgba(201, 163, 95, 0.4);
 }
 
 /* ---------- DESCRIPTION ---------- */
