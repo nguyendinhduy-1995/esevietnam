@@ -159,10 +159,11 @@
 
 .hero-v7__quote-text {
   font-family: var(--font-cormorant);
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 1.4;
-  color: #2F2A26;
+  font-weight: 600;
+  font-size: 38px;
+  font-style: italic;
+  line-height: 1.35;
+  color: #1A1512;
   margin: 0;
   text-align: center;
 }
@@ -223,23 +224,26 @@
 .hero-v7__subheadline {
   font-family: var(--font-cormorant);
   font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.08em;
+  font-size: 24px;
+  letter-spacing: 0.1em;
   line-height: 1.4;
-  color: #7A5826;
   text-transform: uppercase;
   margin: 0 0 16px 0;
+  background: linear-gradient(90deg, #D4A751 0%, #8C6A3B 50%, #D4A751 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
 }
 
 /* ---------- DESCRIPTION ---------- */
 .hero-v7__desc {
   font-family: var(--font-lora);
   font-weight: 500;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.6;
-  color: #2F2A26;
-  max-width: 600px;
-  margin: 0 0 18px 0;
+  color: #1A1512;
+  max-width: 650px;
+  margin: 0 0 24px 0;
 }
 
 /* ---------- BENEFITS (horizontal 4-column row) ---------- */
@@ -266,10 +270,10 @@
 
 .hero-v7__benefit {
   font-family: var(--font-cormorant);
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 18px;
   line-height: 1.4;
-  color: #2F2A26;
+  color: #1A1512;
   position: relative;
   text-align: center;
   flex: 1;
@@ -440,9 +444,15 @@
 
   .hero-v7__inner {
     max-width: 100%;
-    padding-left: 0;
     margin-left: 0;
-    padding-top: 20px;
+    margin-top: -60px;
+    padding: 40px 24px;
+    background: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid rgba(216,198,163,0.4);
+    position: relative;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -466,15 +476,15 @@
   }
 
   .hero-v7__quote-text {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .hero-v7__subheadline {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .hero-v7__desc {
-    font-size: 17px;
+    font-size: 19px;
   }
 
   .hero-v7__benefits {
@@ -529,8 +539,8 @@
   }
 
   .hero-v7__quote-text {
-    font-size: 19px;
-    line-height: 1.38;
+    font-size: 24px;
+    line-height: 1.35;
   }
 
   .hero-v7__title {
@@ -539,13 +549,13 @@
   }
 
   .hero-v7__subheadline {
-    font-size: 15px;
+    font-size: 16px;
     letter-spacing: 0.04em;
     margin-bottom: 14px;
   }
 
   .hero-v7__desc {
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.55;
     margin-bottom: 14px;
   }
