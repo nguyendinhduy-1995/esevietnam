@@ -131,9 +131,9 @@
 
 /* ---------- INNER CONTENT (constrained width) ---------- */
 .hero-v7__inner {
-  width: 50%;
-  max-width: 680px;
-  padding: 56px 48px;
+  width: auto;
+  max-width: 600px;
+  padding: 40px;
   background: rgba(244, 239, 230, 0.65);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -180,7 +180,7 @@
 .hero-v7__quote-text {
   font-family: var(--font-cormorant);
   font-weight: 600;
-  font-size: 38px;
+  font-size: 28px;
   font-style: italic;
   line-height: 1.35;
   color: var(--hero-text);
@@ -200,7 +200,7 @@
 .hero-v7__title {
   font-family: var(--font-cinzel);
   font-weight: 500;
-  font-size: clamp(54px, 5vw, 86px);
+  font-size: clamp(48px, 4.5vw, 68px);
   letter-spacing: 0.03em;
   line-height: 0.95;
   margin: 0;
@@ -239,7 +239,7 @@
 .hero-v7__subheadline {
   font-family: var(--font-cormorant);
   font-weight: 700;
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 0.1em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -251,17 +251,17 @@
 .hero-v7__desc {
   font-family: var(--font-lora);
   font-weight: 500;
-  font-size: 22px;
+  font-size: 17px;
   line-height: 1.6;
   color: var(--hero-text);
-  max-width: 650px;
-  margin: 0 0 24px 0;
+  max-width: 480px;
+  margin: 0 0 20px 0;
 }
 
 /* ---------- BENEFITS (horizontal 4-column row) ---------- */
 .hero-v7__benefits-wrapper {
   margin-bottom: 20px;
-  max-width: 580px;
+  max-width: 520px;
 }
 
 .hero-v7__divider {
@@ -283,7 +283,7 @@
 .hero-v7__benefit {
   font-family: var(--font-cormorant);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.4;
   color: var(--hero-text);
   position: relative;
@@ -320,10 +320,10 @@
 .hero-v7__meta {
   font-family: var(--font-cormorant);
   font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
   color: var(--hero-text);
   letter-spacing: 0.02em;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 0;
@@ -344,9 +344,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 300px;
-  height: 68px;
-  padding: 0 48px;
+  min-width: 260px;
+  height: 56px;
+  padding: 0 40px;
   background: 
     radial-gradient(ellipse 24px 3px at 25% 1%, rgba(255,255,255,1) 0%, transparent 100%),
     radial-gradient(ellipse 40px 3px at 60% 1%, rgba(255,255,255,0.8) 0%, transparent 100%),
