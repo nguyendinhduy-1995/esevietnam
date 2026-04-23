@@ -1,0 +1,541 @@
+/* ====== KIDIQUETTE HERO V7 — LUXURY EDITORIAL (Reference-Matched) ====== */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600;700&display=swap');
+
+/* ---------- HERO DESIGN TOKENS ---------- */
+:root {
+  --hero-bg: #F7F4EF;
+  --hero-gold: #C9A35F;
+  --hero-gold-deep: #B88A3C;
+  --hero-gold-light: #D9B874;
+  --hero-text: #2F2A26;
+  --hero-text-sub: #5A5149;
+  --hero-text-body: #3F3832;
+  --hero-text-benefit: #4C443D;
+  --hero-line: #D8C6A3;
+
+  --font-cinzel: 'Cinzel', serif;
+  --font-cormorant: 'Cormorant Garamond', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-lora: 'Lora', serif;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero-v7 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 680px;
+  max-height: 960px;
+  overflow: hidden;
+}
+
+/* Full-width background image */
+.hero-v7__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-v7__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65% center;
+  display: block;
+}
+
+/* Cream overlay — warm gradient left→right + golden sparkle bokeh */
+.hero-v7__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  /* Multi-layer: cream fade left→right + warm glow top-left + subtle warm bottom */
+  background:
+    /* Golden sparkle glow top-left */
+    radial-gradient(ellipse 420px 380px at 8% 12%, rgba(217,184,116,0.22) 0%, transparent 70%),
+    /* Secondary warm glow */
+    radial-gradient(ellipse 300px 300px at 15% 35%, rgba(201,163,95,0.12) 0%, transparent 60%),
+    /* Tertiary sparkle */
+    radial-gradient(circle 180px at 5% 5%, rgba(232,197,71,0.10) 0%, transparent 70%),
+    /* Main cream gradient left→right */
+    linear-gradient(90deg,
+      rgba(250,248,245,1) 0%,
+      rgba(250,248,245,0.98) 25%,
+      rgba(250,248,245,0.9) 35%,
+      rgba(250,248,245,0.7) 45%,
+      rgba(250,248,245,0.4) 55%,
+      rgba(250,248,245,0.1) 65%,
+      transparent 75%
+    );
+  pointer-events: none;
+}
+
+/* Bottom gradient for smooth section transition */
+.hero-v7__overlay::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(180deg, transparent 0%, var(--hero-bg) 100%);
+  pointer-events: none;
+}
+
+/* Decorative golden sparkle particles (pseudo) */
+.hero-v7__overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  z-index: 1;
+  background:
+    radial-gradient(circle 2px at 12% 18%, rgba(217,184,116,0.6) 0%, transparent 100%),
+    radial-gradient(circle 3px at 8% 32%, rgba(232,197,71,0.4) 0%, transparent 100%),
+    radial-gradient(circle 2px at 22% 8%, rgba(201,163,95,0.5) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 28% 22%, rgba(217,184,116,0.45) 0%, transparent 100%),
+    radial-gradient(circle 2px at 5% 48%, rgba(232,197,71,0.35) 0%, transparent 100%),
+    radial-gradient(circle 2.5px at 18% 42%, rgba(201,163,95,0.3) 0%, transparent 100%),
+    radial-gradient(circle 1.5px at 32% 15%, rgba(217,184,116,0.4) 0%, transparent 100%),
+    radial-gradient(circle 2px at 15% 55%, rgba(232,197,71,0.3) 0%, transparent 100%),
+    radial-gradient(circle 3px at 3% 25%, rgba(201,163,95,0.5) 0%, transparent 100%),
+    radial-gradient(circle 1px at 25% 38%, rgba(217,184,116,0.35) 0%, transparent 100%);
+  pointer-events: none;
+  animation: sparkleFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes sparkleFloat {
+  0% { opacity: 0.7; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-3px); }
+  100% { opacity: 0.75; transform: translateY(1px); }
+}
+
+/* ---------- CONTENT CONTAINER ---------- */
+.hero-v7__content {
+  position: relative;
+  z-index: 3;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 48px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-v7__content > * {
+  pointer-events: auto;
+}
+
+/* ---------- INNER CONTENT (constrained width) ---------- */
+.hero-v7__inner {
+  max-width: 860px;
+  padding-left: 4%;
+}
+
+/* ---------- QUOTE ---------- */
+.hero-v7__quote-wrap {
+  position: relative;
+  padding-left: 44px;
+  margin-bottom: 4px;
+}
+
+.hero-v7__quote-mark {
+  position: absolute;
+  left: -6px;
+  top: -18px;
+  font-family: var(--font-cormorant);
+  font-size: 72px;
+  line-height: 1;
+  color: var(--hero-gold);
+  opacity: 0.7;
+  user-select: none;
+}
+
+.hero-v7__quote-text {
+  font-family: var(--font-cormorant);
+  font-size: 22px;
+  line-height: 1.45;
+  color: #333333;
+  margin: 0;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ---------- TITLE ---------- */
+.hero-v7__title-wrap {
+  position: relative;
+  margin-bottom: 24px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-v7__title {
+  font-family: var(--font-cinzel);
+  font-weight: 700;
+  font-size: clamp(64px, 7.5vw, 105px);
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  background: linear-gradient(175deg, #F3DE9A 0%, #DDB65C 30%, #CFA54D 55%, #B88A3C 80%, #D4AD52 100%);
+  background-size: 100% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
+  animation: goldShimmer 6s ease-in-out infinite alternate;
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.hero-v7__ornament {
+  margin-top: 4px;
+  animation: heroFadeUp 0.7s ease-out 0.45s both;
+}
+
+.hero-v7__ornament svg {
+  display: block;
+}
+
+/* ---------- SUBHEADLINE ---------- */
+.hero-v7__subheadline {
+  font-family: var(--font-cormorant);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--hero-gold);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+/* ---------- DESCRIPTION ---------- */
+.hero-v7__desc {
+  font-family: var(--font-cormorant);
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666666;
+  max-width: 540px;
+  margin-bottom: 32px;
+}
+
+/* ---------- BENEFITS (2x2 Grid) ---------- */
+.hero-v7__benefits {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 12px 32px;
+  margin-bottom: 0;
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+}
+
+.hero-v7__benefit {
+  font-family: var(--font-cormorant);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(136, 136, 136, 0.85);
+  position: relative;
+  padding-left: 14px;
+  white-space: nowrap;
+}
+
+.hero-v7__benefit::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--hero-gold);
+  opacity: 0.4;
+}
+
+/* ---------- HERO ANIMATIONS ---------- */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero-v7__bg { animation: heroFadeIn 1s ease-out 0s both; }
+.hero-v7__quote-wrap { animation: heroFadeUp 0.7s ease-out 0.2s both; }
+.hero-v7__title { animation: heroFadeUp 0.7s ease-out 0.4s both, titleShimmer 6s ease-in-out 2s infinite; }
+.hero-v7__subheadline { animation: heroFadeUp 0.7s ease-out 0.55s both; }
+.hero-v7__desc { animation: heroFadeUp 0.7s ease-out 0.65s both; }
+.hero-v7__benefits { animation: heroFadeUp 0.7s ease-out 0.75s both; }
+/* ---------- RESPONSIVE: TABLET ---------- */
+@media (max-width: 1024px) {
+  .hero-v7 {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .hero-v7__bg {
+    position: relative;
+    height: 400px;
+  }
+
+  .hero-v7__overlay {
+    background:
+      radial-gradient(ellipse 300px 260px at 10% 70%, rgba(217,184,116,0.15) 0%, transparent 70%),
+      linear-gradient(180deg,
+        transparent 0%,
+        transparent 45%,
+        rgba(247,244,239,0.5) 70%,
+        var(--hero-bg) 100%
+      );
+  }
+
+  .hero-v7__overlay::after { display: none; }
+  .hero-v7__overlay::before { display: none; }
+
+  .hero-v7__content {
+    padding: 0 32px 40px;
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .hero-v7__inner {
+    max-width: 100%;
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  .hero-v7__title {
+    font-size: clamp(48px, 10vw, 76px);
+  }
+
+  .hero-v7__quote-text {
+    font-size: 22px;
+  }
+
+  .hero-v7__subheadline {
+    font-size: 17px;
+  }
+
+  .hero-v7__desc {
+    font-size: 17px;
+  }
+
+  .hero-v7__benefits {
+    flex-wrap: wrap;
+  }
+
+  .hero-v7__benefit {
+    font-size: 15px;
+    white-space: normal;
+  }
+}
+
+/* ---------- RESPONSIVE: MOBILE ---------- */
+@media (max-width: 768px) {
+  .hero-v7__bg {
+    height: 320px;
+  }
+
+  .hero-v7__content {
+    padding: 0 20px 32px;
+  }
+
+  .hero-v7__inner {
+    padding-top: 14px;
+  }
+
+  .hero-v7__quote-wrap {
+    padding-left: 34px;
+    margin-bottom: 8px;
+  }
+
+  .hero-v7__quote-mark {
+    font-size: 50px;
+    top: -10px;
+    left: -2px;
+  }
+
+  .hero-v7__quote-text {
+    font-size: 19px;
+    line-height: 1.38;
+  }
+
+  .hero-v7__title {
+    font-size: clamp(38px, 12vw, 54px);
+    letter-spacing: 0.01em;
+  }
+
+  .hero-v7__subheadline {
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+
+  .hero-v7__desc {
+    font-size: 16px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+
+  .hero-v7__benefits {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-v7__benefit {
+    font-size: 15px;
+    white-space: normal;
+  }
+
+  .hero-v7__benefit:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* ---------- VERY SMALL SCREENS ---------- */
+@media (max-width: 400px) {
+  .hero-v7__bg {
+    height: 280px;
+  }
+
+  .hero-v7__title {
+    font-size: 36px;
+  }
+
+  .hero-v7__subheadline {
+    font-size: 14px;
+  }
+
+  .hero-v7__desc {
+    font-size: 15px;
+  }
+}
+
+/* ---------- NAVBAR (Hero V7 Custom) ---------- */
+.hero-v7-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 24px 0;
+  background: transparent;
+  transition: all 0.4s ease;
+}
+
+.hero-v7-nav.scrolled {
+  background: rgba(247, 244, 239, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201, 163, 95, 0.15);
+  padding: 14px 0;
+}
+
+.hero-v7-nav__container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-v7-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.hero-v7-nav__logo img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 163, 95, 0.3);
+}
+
+.hero-v7-nav__logo span {
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.25em;
+  color: #4B4641;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.hero-v7-nav__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 64px;
+  background: linear-gradient(180deg, #D8B062 0%, #C7963D 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50px;
+  box-shadow: 0 10px 24px rgba(185, 138, 60, 0.16);
+  font-family: var(--font-cinzel);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #2E2417;
+  text-decoration: none;
+  transition: all 220ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-v7-nav__btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 100%);
+  border-radius: 50px 50px 0 0;
+  pointer-events: none;
+}
+
+.hero-v7-nav__btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 14px 32px rgba(185, 138, 60, 0.24);
+  color: #1a140d;
+}
+
+@media (max-width: 1024px) {
+  .hero-v7-nav__container {
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-v7-nav {
+    padding: 16px 0;
+  }
+  .hero-v7-nav__container {
+    padding: 0 20px;
+  }
+  .hero-v7-nav__logo span {
+    display: none;
+  }
+  .hero-v7-nav__btn {
+    width: 160px;
+    height: 50px;
+    font-size: 15px;
+  }
+}
