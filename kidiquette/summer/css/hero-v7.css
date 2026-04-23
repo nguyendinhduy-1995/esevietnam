@@ -543,8 +543,9 @@
   }
   
   .hero-v7__bg img {
-    transform: scale(1.5);
-    transform-origin: center bottom;
+    object-position: 85% bottom;
+    transform: scale(1.4);
+    transform-origin: 85% bottom;
   }
 
   .hero-v7__content {
