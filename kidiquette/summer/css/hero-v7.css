@@ -222,11 +222,11 @@
 /* ---------- SUBHEADLINE ---------- */
 .hero-v7__subheadline {
   font-family: var(--font-cormorant);
-  font-weight: 600;
-  font-size: 18.5px;
-  letter-spacing: 0.07em;
-  line-height: 1.38;
-  color: #8C6A3B;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  color: #7A5826;
   text-transform: uppercase;
   margin: 0 0 16px 0;
 }
@@ -234,10 +234,10 @@
 /* ---------- DESCRIPTION ---------- */
 .hero-v7__desc {
   font-family: var(--font-lora);
-  font-weight: 400;
-  font-size: 18.5px;
+  font-weight: 500;
+  font-size: 20px;
   line-height: 1.6;
-  color: #4A443E;
+  color: #2F2A26;
   max-width: 600px;
   margin: 0 0 18px 0;
 }
@@ -266,10 +266,10 @@
 
 .hero-v7__benefit {
   font-family: var(--font-cormorant);
-  font-weight: 500;
-  font-size: 14px;
+  font-weight: 600;
+  font-size: 16px;
   line-height: 1.4;
-  color: var(--hero-text-benefit);
+  color: #2F2A26;
   position: relative;
   text-align: center;
   flex: 1;
@@ -303,9 +303,9 @@
 /* ---------- METADATA ---------- */
 .hero-v7__meta {
   font-family: var(--font-cormorant);
-  font-weight: 500;
-  font-size: 17px;
-  color: var(--hero-text-sub);
+  font-weight: 600;
+  font-size: 18px;
+  color: #2F2A26;
   letter-spacing: 0.02em;
   margin-bottom: 24px;
   display: flex;
