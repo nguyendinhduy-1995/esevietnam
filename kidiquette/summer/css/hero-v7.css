@@ -208,22 +208,23 @@
   text-transform: uppercase;
   background: linear-gradient(90deg, 
     #9C7224 0%,
-    #DFB754 50%,
-    #875F15 100%
+    #DFB754 25%,
+    #875F15 50%,
+    #DFB754 75%,
+    #9C7224 100%
   );
-  background-size: 100% 100%;
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   position: relative;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-  animation: heroFadeUp 0.7s ease-out 0.4s both;
+  animation: heroFadeUp 0.7s ease-out 0.4s both, titleShimmer 4s linear infinite;
 }
 
 @keyframes titleShimmer {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 0% 100%; }
-  100% { background-position: 0% 0%; }
+  0% { background-position: 200% center; }
+  100% { background-position: 0% center; }
 }
 
 .hero-v7__ornament {
