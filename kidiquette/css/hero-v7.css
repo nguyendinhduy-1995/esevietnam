@@ -57,15 +57,16 @@
     radial-gradient(ellipse 300px 300px at 15% 35%, rgba(201,163,95,0.12) 0%, transparent 60%),
     /* Tertiary sparkle */
     radial-gradient(circle 180px at 5% 5%, rgba(232,197,71,0.10) 0%, transparent 70%),
-    /* Main cream gradient left→right */
+    /* Main cream gradient left→right — matched to reference */
     linear-gradient(90deg,
       rgba(250,248,245,1) 0%,
-      rgba(250,248,245,0.98) 25%,
-      rgba(250,248,245,0.9) 35%,
-      rgba(250,248,245,0.7) 45%,
-      rgba(250,248,245,0.4) 55%,
-      rgba(250,248,245,0.1) 65%,
-      transparent 75%
+      rgba(250,248,245,1) 30%,
+      rgba(250,248,245,0.95) 38%,
+      rgba(250,248,245,0.8) 46%,
+      rgba(250,248,245,0.55) 54%,
+      rgba(250,248,245,0.3) 60%,
+      rgba(250,248,245,0.1) 66%,
+      transparent 72%
     );
   pointer-events: none;
 }
@@ -133,7 +134,7 @@
 /* ---------- INNER CONTENT (constrained width) ---------- */
 .hero-v7__inner {
   max-width: 860px;
-  padding-left: 4%;
+  padding-left: calc(4% + 60px);
 }
 
 /* ---------- QUOTE ---------- */
