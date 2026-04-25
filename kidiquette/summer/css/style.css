@@ -553,6 +553,8 @@ a:hover { color: var(--honey-deep); }
 .testimonial-card:nth-child(2) { grid-column: span 5; }
 .testimonial-card:nth-child(3) { grid-column: span 4; }
 .testimonial-card:nth-child(4) { grid-column: span 8; }
+.testimonial-card:nth-child(5) { grid-column: span 12; text-align: center; }
+.testimonial-card:nth-child(5)::before { left: 50%; transform: translateX(-50%); }
 @media (max-width: 768px) { .testimonial-grid { display: flex; flex-direction: column; } }
 
 /* ====== REGISTRATION FORM ====== */
