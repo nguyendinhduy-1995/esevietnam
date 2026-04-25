@@ -455,7 +455,63 @@ a:hover { color: var(--honey-deep); }
 .gallery-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(245,166,35,0.12) 100%); opacity: 0; transition: opacity 0.3s; border-radius: var(--radius-sm); }
 .gallery-item:hover::after { opacity: 1; }
 .gallery-item:nth-child(1) { grid-column: span 2; aspect-ratio: auto; }
+.gallery-grid--uniform .gallery-item:nth-child(1) { grid-column: span 1; aspect-ratio: 4/3; }
+.gallery-grid--uniform { grid-template-columns: repeat(3, 1fr); }
 .gallery-caption { font-style: italic; font-size: 0.92rem; color: var(--text-muted); margin-top: 20px; }
+
+/* ====== BEFORE/AFTER PAIRS ====== */
+.ba-pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.ba-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border: 1px solid var(--border-warm);
+  background: var(--warm-white);
+}
+.ba-pair-img {
+  position: relative;
+  overflow: hidden;
+}
+.ba-pair-img img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.ba-pair:hover .ba-pair-img img {
+  transform: scale(1.03);
+}
+.ba-pair-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  z-index: 2;
+}
+.ba-label-before {
+  background: rgba(31, 46, 61, 0.8);
+  color: rgba(255,255,255,0.9);
+}
+.ba-label-after {
+  background: rgba(200, 169, 107, 0.9);
+  color: #fff;
+}
 
 /* ====== INSTRUCTOR ====== */
 .instructor-section { padding: var(--section-py) 0; background: #fff; }
@@ -547,7 +603,7 @@ a:hover { color: var(--honey-deep); }
 .testimonial-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; margin-top: 48px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .testimonial-card { text-align: left; background: #fff; padding: 40px 32px; border: 1px solid var(--line-ink); position: relative; transition: all 0.5s ease; border-radius: 0; }
 .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(26,54,93,0.06); }
-.testimonial-card::before { content: '“'; font-family: var(--font-heading); font-size: 5rem; color: var(--champagne); opacity: 0.3; position: absolute; top: -10px; left: 20px; line-height: 1; }
+.testimonial-card::before { content: '“'; font-family: var(--font-heading); font-size: 5rem; color: var(--champagne-gold); opacity: 0.25; position: absolute; top: -10px; left: 20px; line-height: 1; }
 .testimonial-text { font-family: var(--font-heading); font-style: italic; font-size: 1.1rem; color: var(--text-dark); line-height: 1.75; margin-bottom: 24px; position: relative; z-index: 1; }
 .testimonial-author { font-style: normal; font-family: var(--font-body); font-size: 0.82rem; color: var(--text-dark); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: block; }
 .testimonial-meta { font-family: var(--font-body); font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; display: block; }
@@ -773,9 +829,13 @@ a:hover { color: var(--honey-deep); }
   .ba-col li { font-size: 0.84rem !important; }
 
   /* Gallery */
-  .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
-  .gallery-item:nth-child(1) { grid-column: span 2; }
+  .gallery-grid, .gallery-grid--uniform { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+  .gallery-item:nth-child(1), .gallery-grid--uniform .gallery-item:nth-child(1) { grid-column: span 2; aspect-ratio: auto !important; }
   .gallery-caption { font-size: 0.82rem !important; }
+  .ba-pairs-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .ba-pair { gap: 2px; }
+  .ba-pair-img img { aspect-ratio: 3/4; }
+  .ba-pair-label { font-size: 0.58rem; padding: 3px 10px; top: 6px; left: 6px; }
 
   /* Instructor */
   .instructor-grid { grid-template-columns: 1fr !important; text-align: center; gap: 28px !important; }
