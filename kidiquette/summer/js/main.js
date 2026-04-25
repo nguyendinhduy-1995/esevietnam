@@ -293,6 +293,10 @@ function initSmoothScroll() {
 function initForm() {
   var form = document.getElementById('registrationForm');
   if (!form) return;
+
+  // Multi-step navigation
+  initMultiStepForm(form);
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var valid = true;
@@ -300,10 +304,10 @@ function initForm() {
     var parent = form.querySelector('#form-parent');
     var child = form.querySelector('#form-child');
     var phone = form.querySelector('#form-phone');
-    if (!parent.value.trim()) { showError(parent, 'Vui lòng nhập họ tên phụ huynh'); valid = false; }
-    if (!child.value.trim()) { showError(child, 'Vui lòng nhập tên con'); valid = false; }
+    if (!parent.value.trim()) { showError(parent, 'Vui lòng nhập họ tên phụ huynh'); goToStep(form, 1); valid = false; }
+    if (!child.value.trim()) { showError(child, 'Vui lòng nhập tên con'); if (valid) goToStep(form, 2); valid = false; }
     var phoneVal = phone.value.trim().replace(/\s/g, '');
-    if (!phoneVal || !/^0\d{9}$/.test(phoneVal)) { showError(phone, 'Số điện thoại phải có 10 chữ số và bắt đầu bằng 0'); valid = false; }
+    if (!phoneVal || !/^0\d{9}$/.test(phoneVal)) { showError(phone, 'Số điện thoại phải có 10 chữ số và bắt đầu bằng 0'); if (valid) goToStep(form, 1); valid = false; }
     if (!valid) return;
     var submitBtn = form.querySelector('button[type="submit"]');
     if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Đang gửi...'; }
@@ -326,11 +330,91 @@ function initForm() {
     }).catch(function() { showSuccess(); });
     function showSuccess() {
       form.style.display = 'none';
+      var indicator = document.getElementById('formStepsIndicator');
+      if (indicator) indicator.style.display = 'none';
       var success = document.getElementById('form-success');
       if (success) success.classList.add('active');
       trackEvent('FORM_SUBMIT', formData);
     }
   });
+}
+
+function initMultiStepForm(form) {
+  var steps = form.querySelectorAll('.form-step');
+  if (steps.length <= 1) return;
+
+  form.querySelectorAll('.form-next-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var nextStep = parseInt(this.getAttribute('data-next'));
+      var currentStep = nextStep - 1;
+      if (!validateStep(form, currentStep)) return;
+      goToStep(form, nextStep);
+    });
+  });
+
+  form.querySelectorAll('.form-prev-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var prevStep = parseInt(this.getAttribute('data-prev'));
+      goToStep(form, prevStep);
+    });
+  });
+}
+
+function validateStep(form, stepNum) {
+  clearErrors();
+  var valid = true;
+  if (stepNum === 1) {
+    var parent = form.querySelector('#form-parent');
+    var phone = form.querySelector('#form-phone');
+    if (!parent.value.trim()) { showError(parent, 'Vui lòng nhập họ tên'); valid = false; }
+    var phoneVal = phone.value.trim().replace(/\s/g, '');
+    if (!phoneVal || !/^0\d{9}$/.test(phoneVal)) { showError(phone, 'Số điện thoại phải có 10 chữ số'); valid = false; }
+  } else if (stepNum === 2) {
+    var child = form.querySelector('#form-child');
+    if (!child.value.trim()) { showError(child, 'Vui lòng nhập tên con'); valid = false; }
+  }
+  return valid;
+}
+
+function goToStep(form, stepNum) {
+  form.querySelectorAll('.form-step').forEach(function(s) { s.classList.remove('active'); });
+  var target = form.querySelector('.form-step[data-step="' + stepNum + '"]');
+  if (target) target.classList.add('active');
+
+  // Update indicator
+  var indicator = document.getElementById('formStepsIndicator');
+  if (indicator) {
+    var dots = indicator.querySelectorAll('.step-dot');
+    var lines = indicator.querySelectorAll('.step-line');
+    dots.forEach(function(dot) {
+      var dotStep = parseInt(dot.getAttribute('data-step'));
+      dot.classList.remove('active', 'completed');
+      if (dotStep === stepNum) dot.classList.add('active');
+      else if (dotStep < stepNum) dot.classList.add('completed');
+    });
+    lines.forEach(function(line, i) {
+      if (i < stepNum - 1) line.classList.add('completed');
+      else line.classList.remove('completed');
+    });
+  }
+
+  // Update summary on step 3
+  if (stepNum === 3) updateFormSummary(form);
+}
+
+function updateFormSummary(form) {
+  var summary = document.getElementById('formSummary');
+  if (!summary) return;
+  var parent = (form.querySelector('#form-parent') || {}).value || '';
+  var phone = (form.querySelector('#form-phone') || {}).value || '';
+  var child = (form.querySelector('#form-child') || {}).value || '';
+  var age = (form.querySelector('#form-age') || {}).value || '';
+  var pkg = form.querySelector('#form-package');
+  var pkgText = pkg && pkg.selectedIndex > 0 ? pkg.options[pkg.selectedIndex].text : 'Chưa chọn';
+  summary.innerHTML = '<strong>Phụ huynh:</strong> ' + parent + '<br>' +
+    '<strong>SĐT:</strong> ' + phone + '<br>' +
+    '<strong>Tên con:</strong> ' + child + (age ? ' (' + age + ' tuổi)' : '') + '<br>' +
+    '<strong>Gói:</strong> ' + pkgText;
 }
 function showError(input, message) {
   var group = input.closest('.form-group');

@@ -662,42 +662,69 @@
     <h2 class="section-title reveal" style="text-align:center;">Cho con một <span class="accent-text">khởi đầu đẹp</span></h2>
     <p class="reveal" style="color:var(--text-muted);max-width:500px;margin:0 auto 8px;font-size:0.95rem;text-align:center;">Điền thông tin bên dưới, chúng tôi sẽ liên hệ qua Zalo trong vòng 30 phút.</p>
     <div class="form-wrapper">
+      <!-- Step Indicator -->
+      <div class="form-steps-indicator reveal" id="formStepsIndicator">
+        <div class="step-dot active" data-step="1"><span>1</span><small>Phụ huynh</small></div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="2"><span>2</span><small>Thông tin bé</small></div>
+        <div class="step-line"></div>
+        <div class="step-dot" data-step="3"><span>3</span><small>Xác nhận</small></div>
+      </div>
       <form id="registrationForm" class="reveal">
-        <div class="form-row">
+        <!-- Step 1: Parent Info -->
+        <div class="form-step active" data-step="1">
           <div class="form-group">
             <label for="form-parent">Họ tên phụ huynh *</label>
             <input type="text" id="form-parent" placeholder="Nguyễn Văn A" required>
             <div class="form-error"></div>
           </div>
           <div class="form-group">
+            <label for="form-phone">Số điện thoại / Zalo *</label>
+            <input type="tel" id="form-phone" placeholder="0912 345 678" required>
+            <div class="form-error"></div>
+          </div>
+          <button type="button" class="btn-zalo form-next-btn" data-next="2" style="width:100%;">Tiếp tục →</button>
+        </div>
+        <!-- Step 2: Child Info -->
+        <div class="form-step" data-step="2">
+          <div class="form-group">
             <label for="form-child">Tên con *</label>
             <input type="text" id="form-child" placeholder="Bé Minh" required>
             <div class="form-error"></div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="form-phone">Số điện thoại *</label>
-            <input type="tel" id="form-phone" placeholder="0912 345 678" required>
-            <div class="form-error"></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-age">Tuổi con</label>
+              <input type="number" id="form-age" placeholder="8" min="4" max="15">
+            </div>
+            <div class="form-group">
+              <label for="form-package">Gói quan tâm</label>
+              <select id="form-package">
+                <option value="">— Chọn gói —</option>
+                <option value="standard">Standard — 3.200.000đ</option>
+                <option value="premium">Premium — 5.200.000đ</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="form-age">Tuổi con</label>
-            <input type="number" id="form-age" placeholder="8" min="4" max="15">
+          <div style="display:flex;gap:12px;">
+            <button type="button" class="btn-outline form-prev-btn" data-prev="1" style="flex:1;">← Quay lại</button>
+            <button type="button" class="btn-zalo form-next-btn" data-next="3" style="flex:2;">Tiếp tục →</button>
           </div>
         </div>
-        <div class="form-group">
-          <label for="form-package">Gói quan tâm</label>
-          <select id="form-package">
-            <option value="">— Chọn gói —</option>
-            <option value="standard">Standard Experience — 3.200.000đ</option>
-            <option value="premium">Premium Experience — 5.200.000đ</option>
-          </select>
+        <!-- Step 3: Confirm -->
+        <div class="form-step" data-step="3">
+          <div class="form-group">
+            <label for="form-message">Ghi chú thêm (tuỳ chọn)</label>
+            <textarea id="form-message" rows="3" placeholder="Ví dụ: Con hay nhút nhát, muốn đăng ký lớp Hà Nội..."></textarea>
+          </div>
+          <div class="form-summary" id="formSummary"></div>
+          <div style="display:flex;gap:12px;">
+            <button type="button" class="btn-outline form-prev-btn" data-prev="2" style="flex:1;">← Quay lại</button>
+            <button type="submit" class="btn-zalo" style="flex:2;">Gửi Đăng Ký</button>
+          </div>
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; text-align: center;">Thông tin của học viên được bảo mật tuyệt đối.</p>
         </div>
-        
-        <button type="submit" class="btn-zalo" style="width:100%;">Gửi Đăng Ký</button>
-
-        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 12px; text-align: center;">Thông tin của học viên được bảo mật tuyệt đối. Chúng tôi sẽ liên hệ qua Zalo trong vòng 30 phút.</p>      </form>
+      </form>
       <div id="form-success" class="form-success">
         <h3>Đăng ký thành công!</h3>
         <p>Cảm ơn bạn đã quan tâm đến KIDIQUETTE Mùa Hè 2026.<br>Chúng tôi sẽ liên hệ qua Zalo trong vòng 30 phút.</p>

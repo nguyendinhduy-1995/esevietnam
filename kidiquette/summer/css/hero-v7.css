@@ -540,7 +540,24 @@
 
 @media (max-width: 768px) {
   .hero-v7__bg {
-    display: none;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+  }
+  .hero-v7__bg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  .hero-v7__bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--warm-white));
   }
 
   .hero-v7__content {

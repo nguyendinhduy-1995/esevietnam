@@ -1188,6 +1188,100 @@ img {
   display: inline;
 }
 
+/* ====== MULTI-STEP FORM ====== */
+.form-steps-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 32px;
+}
+.step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+}
+.step-dot span {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--warm-white);
+  border: 2px solid var(--border-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+.step-dot.active span,
+.step-dot.completed span {
+  background: var(--champagne-gold);
+  border-color: var(--champagne-gold);
+  color: #fff;
+}
+.step-dot.completed span {
+  background: var(--champagne-gold-dark);
+  border-color: var(--champagne-gold-dark);
+}
+.step-dot small {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.step-dot.active small {
+  color: var(--champagne-gold-dark);
+  font-weight: 700;
+}
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border-warm);
+  max-width: 60px;
+  margin: 0 12px;
+  margin-bottom: 18px;
+  transition: background 0.3s ease;
+}
+.step-line.completed {
+  background: var(--champagne-gold);
+}
+.form-step {
+  display: none;
+  animation: formStepIn 0.3s ease;
+}
+.form-step.active {
+  display: block;
+}
+@keyframes formStepIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.form-next-btn,
+.form-prev-btn {
+  cursor: pointer;
+}
+.form-summary {
+  background: var(--warm-white);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  font-size: 0.82rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+.form-summary strong {
+  color: var(--text-dark);
+}
+
 /* ====== ACCENT TEXT REFINED ====== */
 @media (max-width: 768px) {
   .hero-v7__trust-badges { flex-direction: column; align-items: center; gap: 6px; }
