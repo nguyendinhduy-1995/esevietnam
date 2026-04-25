@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initTypewriter();
   initScrollProgress();
   initStickyCtaDesktop();
+  initAnimatedCounters();
 });
 
 /* ====== TYPEWRITER ====== */
@@ -422,4 +423,37 @@ function initStickyCtaDesktop() {
       cta.classList.remove('visible');
     }
   }, { passive: true });
+}
+
+/* ====== ANIMATED COUNTERS ====== */
+function initAnimatedCounters() {
+  var numbers = document.querySelectorAll('.proof-number[data-target]');
+  if (!numbers.length) return;
+  var animated = new Set();
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      if (animated.has(el)) return;
+      animated.add(el);
+      var target = parseFloat(el.getAttribute('data-target'));
+      var suffix = el.getAttribute('data-suffix') || '';
+      var isDecimal = el.getAttribute('data-decimal') === 'true';
+      var duration = 1500;
+      var start = performance.now();
+      function step(now) {
+        var progress = Math.min((now - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = eased * target;
+        if (isDecimal) {
+          el.textContent = current.toFixed(1) + suffix;
+        } else {
+          el.textContent = Math.floor(current) + suffix;
+        }
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.3 });
+  numbers.forEach(function(el) { observer.observe(el); });
 }

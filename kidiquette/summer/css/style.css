@@ -906,6 +906,17 @@ a:hover { color: var(--honey-deep); }
 
   /* Testimonial Avatar */
   .testimonial-avatar { width: 36px; height: 36px; font-size: 0.65rem; }
+
+  /* Zalo Float */
+  .zalo-float { bottom: 76px; left: 12px; padding: 10px; gap: 0; }
+  .zalo-float-text { display: none; }
+
+  /* Timeline */
+  .timeline { padding-left: 24px; }
+  .timeline-item { padding: 0 0 22px 20px; }
+  .timeline-item::before { left: -28px; width: 8px; height: 8px; }
+  .timeline-content h4 { font-size: 0.92rem !important; }
+  .timeline-content p { font-size: 0.82rem !important; }
 }
 
 
@@ -1082,6 +1093,99 @@ img {
   text-align: center;
   margin-top: 12px;
   max-width: 600px;
+}
+
+/* ====== CURRICULUM TIMELINE ====== */
+.curriculum-section {
+  padding: var(--section-py) 0;
+  background: #fff;
+}
+.timeline {
+  max-width: 620px;
+  margin: 36px auto 0;
+  position: relative;
+  padding-left: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--champagne-gold), var(--champagne-gold-dark), var(--line-ink));
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 28px 28px;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -36px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--champagne-gold);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--champagne-gold);
+}
+.timeline-time {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--champagne-gold-dark);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.timeline-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.timeline-content p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ====== ZALO FLOATING CHAT ====== */
+.zalo-float {
+  position: fixed;
+  bottom: 32px;
+  left: 32px;
+  z-index: 990;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: #fff;
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+.zalo-float:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  border-color: var(--champagne-gold);
+  color: var(--champagne-gold-dark);
+}
+.zalo-float-text {
+  display: inline;
 }
 
 /* ====== ACCENT TEXT REFINED ====== */
