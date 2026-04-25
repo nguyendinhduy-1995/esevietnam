@@ -1,46 +1,54 @@
 /* ====== KIDIQUETTE SUMMER 2026 — PREMIUM INTERNATIONAL SCHOOL ====== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+
 :root {
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
-  --cream: #fefdfb;
-  --warm-white: #f9f7f3;
-  --light-peach: #f3efe8;
-  --border-warm: #e8e0d2;
-  --text-dark: #1a1a1a;
-  --text-body: #444;
-  --text-muted: #777;
+  --bg-cream: #F7F5F0;
+  --line-ink: rgba(26, 54, 93, 0.2);
+  --navy-blue: #1A365D;
+  --champagne-gold: #D8C6A3;
+  --champagne-gold-dark: #C5A55A;
 
-  --honey: #FFD700;
-  --honey-deep: #DAA520;
-  --amber: #F0C430;
-  --orange: #D4A017;
-  --sky: #FFD700;
-  --sky-deep: #DAA520;
+  --cream: var(--bg-cream);
+  --warm-white: #F7F5F0;
+  --light-peach: #F7F5F0;
+  --border-warm: var(--line-ink);
+  --text-dark: var(--navy-blue);
+  --text-body: #333333;
+  --text-muted: #555555;
+
+  --honey: var(--champagne-gold);
+  --honey-deep: var(--champagne-gold-dark);
+  --amber: var(--champagne-gold);
+  --orange: var(--navy-blue);
+  --sky: var(--champagne-gold);
+  --sky-deep: var(--navy-blue);
   --mint: #2d6a4f;
   --mint-light: #52796f;
   --coral: #c05050;
   --lavender: #7b6fa0;
-  --sun: #F0C430;
-  --sun-bright: #FFD700;
+  --sun: var(--champagne-gold);
+  --sun-bright: var(--champagne-gold-dark);
   --pink: #c78b8b;
 
-  --gradient-hero: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #B8860B 100%);
-  --gradient-warm: linear-gradient(135deg, #FFD700, #DAA520);
-  --gradient-sky: linear-gradient(135deg, #FFD700, #B8860B);
-  --gradient-fun: linear-gradient(135deg, #FFD700, #F0C430, #DAA520);
+  --gradient-hero: linear-gradient(135deg, var(--champagne-gold) 0%, var(--champagne-gold-dark) 50%, #B8860B 100%);
+  --gradient-warm: linear-gradient(135deg, var(--champagne-gold), var(--champagne-gold-dark));
+  --gradient-sky: linear-gradient(135deg, var(--champagne-gold), #B8860B);
+  --gradient-fun: linear-gradient(135deg, var(--champagne-gold), var(--champagne-gold), var(--champagne-gold-dark));
 
-  --card-bg: rgba(255,255,255,0.95);
-  --card-border: rgba(229,221,208,0.5);
-  --card-shadow: 0 8px 30px rgba(0,0,0,0.04);
+  --card-bg: rgba(247, 245, 240, 0.95);
+  --card-border: var(--line-ink);
+  --card-shadow: 0 8px 30px rgba(26, 54, 93, 0.06);
 
-  --section-py: clamp(80px, 10vw, 120px);
+  --section-py: clamp(100px, 12vw, 150px);
   --radius: 16px;
   --radius-sm: 12px;
   --radius-pill: 50px;
 }
+
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -817,3 +825,14 @@ a:hover { color: var(--honey-deep); }
   .mobile-bar-bottom a { padding: 9px !important; font-size: 0.78rem !important; }
 }
 
+
+body.border-wrapper {
+  background-image: radial-gradient(var(--line-ink) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+img {
+  filter: sepia(20%) contrast(110%);
+}
+.hero-subtitle {
+  letter-spacing: 3px !important;
+}
