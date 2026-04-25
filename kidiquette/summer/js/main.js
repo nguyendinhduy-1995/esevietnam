@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
   initHero3DTilt();
   initExitPopup();
   initTypewriter();
+  initScrollProgress();
+  initStickyCtaDesktop();
 });
 
 /* ====== TYPEWRITER ====== */
@@ -261,7 +263,14 @@ function initLightbox() {
   var lightboxImg = document.getElementById('lightbox-img');
   if (!lightbox || !lightboxImg) return;
   document.querySelectorAll('.gallery-item img').forEach(function (img) {
-    img.addEventListener('click', function () { lightboxImg.src = this.src; lightboxImg.alt = this.alt; lightbox.classList.add('active'); document.body.style.overflow = 'hidden'; });
+    img.addEventListener('click', function () {
+      lightboxImg.src = this.src;
+      lightboxImg.alt = this.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      var caption = document.getElementById('lightbox-caption');
+      if (caption) caption.textContent = this.alt || '';
+    });
   });
   lightbox.addEventListener('click', function (e) { if (e.target === lightbox || e.target.classList.contains('lightbox-close')) { lightbox.classList.remove('active'); document.body.style.overflow = ''; } });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && lightbox.classList.contains('active')) { lightbox.classList.remove('active'); document.body.style.overflow = ''; } });
@@ -384,4 +393,33 @@ function initExitPopup() {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && popup.classList.contains('active')) closePopup();
   });
+}
+
+/* ====== SCROLL PROGRESS BAR ====== */
+function initScrollProgress() {
+  var bar = document.getElementById('scrollProgress');
+  if (!bar) return;
+  window.addEventListener('scroll', function() {
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    if (docH <= 0) return;
+    bar.style.width = Math.min((window.scrollY / docH) * 100, 100) + '%';
+  }, { passive: true });
+}
+
+/* ====== STICKY CTA DESKTOP ====== */
+function initStickyCtaDesktop() {
+  if (window.innerWidth <= 768) return;
+  var cta = document.getElementById('stickyCtaDesktop');
+  if (!cta) return;
+  var shown = false;
+  window.addEventListener('scroll', function() {
+    var shouldShow = window.scrollY > window.innerHeight;
+    if (shouldShow && !shown) {
+      shown = true;
+      cta.classList.add('visible');
+    } else if (!shouldShow && shown) {
+      shown = false;
+      cta.classList.remove('visible');
+    }
+  }, { passive: true });
 }
