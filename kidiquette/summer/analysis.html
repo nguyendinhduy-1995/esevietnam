@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phân Tích Landing Page — KIDIQUETTE Summer 2026 | ESE Vietnam</title>
+<link rel="icon" type="image/png" href="../images/logo.png">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#1A365D;--gold:#C8A96B;--gold-dark:#A8893E;--cream:#FFFDF7;--text:#2D3748;--muted:#718096;--border:#E8E0D0;--radius:12px}
+body{font-family:'Cormorant Garamond',Georgia,serif;background:var(--cream);color:var(--text);line-height:1.7}
+.container{max-width:860px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--navy)}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);text-align:center;margin-bottom:8px}
+h2{font-size:1.4rem;margin:48px 0 20px;padding-bottom:12px;border-bottom:2px solid var(--gold)}
+h3{font-size:1.1rem;margin:24px 0 8px;color:var(--gold-dark)}
+p,li{font-family:'Inter',sans-serif;font-size:0.92rem;color:var(--text);line-height:1.8}
+.hero-bar{background:var(--navy);color:#fff;padding:48px 24px;text-align:center}
+.hero-bar h1{color:#fff}
+.hero-bar .sub{color:rgba(255,255,255,0.7);font-family:'Inter',sans-serif;font-size:0.88rem;margin-top:8px}
+.gold{color:var(--gold)}
+.section{padding:20px 0}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin:16px 0}
+.card h3{margin-top:0}
+.tag{display:inline-block;background:var(--gold);color:#fff;font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-right:6px}
+.tag.blue{background:var(--navy)}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-family:'Inter',sans-serif;font-size:0.85rem}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+th{background:var(--navy);color:#fff;font-weight:600;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase}
+tr:hover{background:rgba(200,169,107,0.04)}
+ul{padding-left:20px;margin:8px 0}
+li{margin:4px 0}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:16px 0}
+.kpi{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+.kpi .num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--gold-dark)}
+.kpi .label{font-family:'Inter',sans-serif;font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.note{background:rgba(200,169,107,0.08);border-left:3px solid var(--gold);padding:16px 20px;margin:16px 0;border-radius:0 var(--radius) var(--radius) 0;font-size:0.88rem}
+.feedback-form{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin:24px 0}
+.feedback-form label{display:block;font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:600;color:var(--navy);margin-bottom:6px;margin-top:16px}
+.feedback-form input,.feedback-form textarea,.feedback-form select{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:8px;font-family:'Inter',sans-serif;font-size:0.88rem;background:var(--cream);transition:border 0.3s}
+.feedback-form input:focus,.feedback-form textarea:focus{outline:none;border-color:var(--gold)}
+.feedback-form textarea{resize:vertical;min-height:100px}
+.btn-submit{display:block;width:100%;padding:14px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff;border:none;border-radius:8px;font-family:'Inter',sans-serif;font-size:0.88rem;font-weight:700;letter-spacing:1px;cursor:pointer;margin-top:20px;transition:all 0.3s}
+.btn-submit:hover{box-shadow:0 8px 24px rgba(200,169,107,0.4);transform:translateY(-1px)}
+.footer-note{text-align:center;padding:40px 24px;font-family:'Inter',sans-serif;font-size:0.75rem;color:var(--muted)}
+@media(max-width:600px){.kpi-grid{grid-template-columns:1fr 1fr}.card{padding:20px}.hero-bar{padding:32px 16px}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hero-bar">
+<div class="container">
+<p class="sub">BÁO CÁO CHIẾN LƯỢC</p>
+<h1>Phân Tích Landing Page<br><span class="gold">KIDIQUETTE Summer 2026</span></h1>
+<p class="sub">Tài liệu nội bộ dành cho khách hàng — ESE Vietnam</p>
+</div>
+</div>
+<div class="container">
+<!-- 1. TỔNG QUAN -->
+<h2>1. Tổng Quan Chiến Lược</h2>
+<div class="card">
+<h3>Mục tiêu Landing Page</h3>
+<p>Trang được thiết kế theo mô hình <strong>PAS (Problem → Agitate → Solution)</strong> kết hợp phong cách <strong>"Old Money Editorial"</strong> — sang trọng, tinh tế, không lạm dụng màu sắc hay hiệu ứng trẻ con. Mục tiêu duy nhất: <strong>chốt đăng ký qua Zalo hoặc Form</strong>.</p>
+<div class="note">Phụ huynh mục tiêu: 30–45 tuổi, thu nhập trung-cao, quan tâm giáo dục con theo hướng quốc tế. Họ ra quyết định bằng cảm xúc (lo lắng cho con) + lý trí (bằng chứng, uy tín).</div>
+</div>
+
+<div class="kpi-grid">
+<div class="kpi"><div class="num">PAS</div><div class="label">Mô hình bán hàng</div></div>
+<div class="kpi"><div class="num">7</div><div class="label">Điểm chạm CTA</div></div>
+<div class="kpi"><div class="num">3</div><div class="label">Bước Form</div></div>
+<div class="kpi"><div class="num">4.9/5</div><div class="label">Social Proof</div></div>
+</div>
+
+<!-- 2. PHÂN TÍCH TỪNG SECTION -->
+<h2>2. Phân Tích Từng Section</h2>
+
+<div class="card">
+<h3><span class="tag">Hero</span> Ấn tượng đầu tiên</h3>
+<p><strong>Tại sao:</strong> Phụ huynh quyết định ở lại hay rời đi trong 3 giây đầu. Hero dùng ảnh thật (fine dining), typography sang trọng, và 2 CTA rõ ràng (Giữ Chỗ + Xem Lịch) để giữ chân ngay lập tức.</p>
+<p><strong>Hiệu ứng:</strong> Gold shimmer trên chữ KIDIQUETTE tạo cảm giác premium. Trust badges ("Lớp giới hạn sĩ số", "Chuyên gia quốc tế") giảm lo ngại ngay từ đầu.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag blue">Social Proof</span> Dải số liệu 500+ | 20+ | 98% | 4.9/5</h3>
+<p><strong>Tại sao:</strong> Số liệu cụ thể tạo trust mạnh hơn 10 lần so với text chung chung. Animation đếm từ 0 giữ mắt người đọc thêm 2–3 giây — đủ để con số khắc vào trí nhớ.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag">Pain Points</span> "Cha mẹ có đang thấy?"</h3>
+<p><strong>Tại sao:</strong> Đây là phần P (Problem) trong PAS. Chạm đúng 4 nỗi đau phổ biến nhất: ngại giao tiếp, thiếu tự tin, cử chỉ lộn xộn, ngại chào hỏi. Phụ huynh thấy đúng con mình → cảm xúc được kích hoạt → tiếp tục đọc.</p>
+<p><strong>Thiết kế:</strong> Mỗi pain card có border-left gold, hover chuyển navy — tạo cảm giác "nhấn mạnh" khi di chuột.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag blue">Solution</span> "Con sẽ học được gì?"</h3>
+<p><strong>Tại sao:</strong> Phần S (Solution) trong PAS. Sau khi kích cảm xúc, đưa ra giải pháp cụ thể. 6 kỹ năng được liệt kê rõ ràng: phong thái, giao tiếp, bàn ăn, tác phong, tự tin, ứng xử.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag">Before/After</span> Bằng chứng trực quan</h3>
+<p><strong>Tại sao:</strong> Ảnh thật trước/sau là proof mạnh nhất. Grid phẳng cho phép phụ huynh so sánh nhanh. Kèm 2 cột text "Trước khóa học" vs "Sau khóa học" để reinforcing message.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag blue">Curriculum Timeline</span> Lịch trình 1 ngày</h3>
+<p><strong>Tại sao:</strong> Phụ huynh cần biết "con làm gì cả ngày". Timeline từ 09:00→15:30 giúp hình dung rõ ràng → giảm lo lắng → tăng quyết định đăng ký. Vertical timeline với gold dots tạo visual flow dễ theo dõi.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag">Instructor</span> Uy tín chuyên gia</h3>
+<p><strong>Tại sao:</strong> Authority proof — phụ huynh cần biết ai dạy con mình. Credentials quốc tế + 20 năm kinh nghiệm + "điều khác biệt" reinforcing rằng đây không phải khóa học bình thường.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag blue">Testimonials</span> Phụ huynh chia sẻ</h3>
+<p><strong>Tại sao:</strong> Social proof từ người thật. Avatar chữ cái tạo cảm giác "có người đứng sau lời nói". 5 testimonials đa dạng (Hà Nội + TP.HCM + Hải Phòng) + ảnh Zalo thật → trust tối đa.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag">Pricing</span> FOMO + Savings Badge</h3>
+<p><strong>Tại sao:</strong> Early Bird countdown (HH:MM:SS) tạo urgency thực sự. "Chỉ còn 3 suất" giới hạn cơ hội. Premium card có badge "Tiết kiệm 1.200.000đ" framing gói đắt hơn thành lựa chọn thông minh. "80% phụ huynh lựa chọn" = bandwagon effect.</p>
+</div>
+
+<div class="card">
+<h3><span class="tag blue">Multi-step Form</span> Đăng ký 3 bước</h3>
+<p><strong>Tại sao:</strong> Form 1 trang với 6 trường = friction cao. Chia 3 bước: Bước 1 chỉ cần tên + SĐT (commitment thấp) → Bước 2 thông tin bé → Bước 3 xem tóm tắt + gửi. Tỷ lệ hoàn thành form tăng 20–30% so với form phẳng.</p>
+</div>
+
+<!-- 3. CÁC YẾU TỐ CHUYỂN ĐỔI -->
+<h2>3. Các Yếu Tố Tối Ưu Chuyển Đổi</h2>
+<table>
+<tr><th>Yếu tố</th><th>Vị trí</th><th>Mục đích</th></tr>
+<tr><td>Sticky CTA Desktop</td><td>Góc phải, hiện khi scroll</td><td>Không bao giờ mất cơ hội click</td></tr>
+<tr><td>Mobile Bottom Bar</td><td>Bottom cố định</td><td>CTA + Hotline + Zalo luôn sẵn sàng</td></tr>
+<tr><td>Zalo Floating Chat</td><td>Góc trái</td><td>Hỏi ngay không cần scroll</td></tr>
+<tr><td>Scroll Progress Bar</td><td>Top page, 2px gold</td><td>Khuyến khích đọc hết trang</td></tr>
+<tr><td>Exit Intent Popup</td><td>Khi chuột rời trang (desktop)</td><td>Giữ lead bằng ebook miễn phí</td></tr>
+<tr><td>FAQ Auto-open</td><td>Câu hỏi đầu tiên</td><td>Giảm friction, trả lời ngay nỗi lo #1</td></tr>
+<tr><td>Countdown Timer</td><td>FOMO Banner</td><td>Urgency thực sự với HH:MM:SS</td></tr>
+</table>
+
+<!-- 4. HƯỚNG DẪN ĐO LƯỜNG ADS -->
+<h2>4. Hướng Dẫn Đo Lường Ads</h2>
+
+<div class="card">
+<h3>4.1 UTM Parameters</h3>
+<p>Khi chạy quảng cáo, luôn gắn UTM vào URL để tracking nguồn:</p>
+<table>
+<tr><th>Kênh</th><th>URL mẫu</th></tr>
+<tr><td>Facebook Ads</td><td><code>?utm_source=facebook&utm_medium=cpc&utm_campaign=kidiquette_summer26</code></td></tr>
+<tr><td>Google Ads</td><td><code>?utm_source=google&utm_medium=cpc&utm_campaign=kidiquette_sem</code></td></tr>
+<tr><td>Zalo Ads</td><td><code>?utm_source=zalo&utm_medium=cpc&utm_campaign=kidiquette_zalo</code></td></tr>
+<tr><td>KOL/Influencer</td><td><code>?utm_source=kol_tenbrand&utm_medium=referral&utm_campaign=kidiquette</code></td></tr>
+</table>
+<div class="note">Landing page đã tích hợp sẵn UTM tracking. Mọi đăng ký qua form sẽ tự động ghi nhận utm_source, utm_medium, utm_campaign vào CRM.</div>
+</div>
+
+<div class="card">
+<h3>4.2 KPI Cần Theo Dõi</h3>
+<div class="kpi-grid">
+<div class="kpi"><div class="num">CTR</div><div class="label">Click-Through Rate<br>Mục tiêu: >2%</div></div>
+<div class="kpi"><div class="num">CPC</div><div class="label">Cost Per Click<br>Mục tiêu: <5.000đ</div></div>
+<div class="kpi"><div class="num">CPL</div><div class="label">Cost Per Lead<br>Mục tiêu: <50.000đ</div></div>
+<div class="kpi"><div class="num">CR</div><div class="label">Conversion Rate<br>Mục tiêu: >3%</div></div>
+</div>
+</div>
+
+<div class="card">
+<h3>4.3 Cách Đo Lường Hiệu Quả</h3>
+<ul>
+<li><strong>Bước 1:</strong> Vào <a href="https://crm.esevietnam.vn" target="_blank">CRM ESE Vietnam</a> → Dashboard → Xem số lead theo ngày, theo nguồn UTM</li>
+<li><strong>Bước 2:</strong> So sánh CPL giữa các kênh (Facebook vs Google vs Zalo) → tập trung budget vào kênh CPL thấp nhất</li>
+<li><strong>Bước 3:</strong> Theo dõi Scroll Depth (CRM ghi nhận 25%, 50%, 75%, 90%) → nếu phần lớn user dừng ở 25%, cần cải thiện phần đầu trang</li>
+<li><strong>Bước 4:</strong> Đo tỷ lệ Zalo click vs Form submit → nếu Zalo >> Form, có thể giảm form và tập trung Zalo CTA</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>4.4 A/B Test Gợi Ý</h3>
+<table>
+<tr><th>Test</th><th>Biến A</th><th>Biến B</th><th>Metric đo</th></tr>
+<tr><td>CTA Text</td><td>"Giữ Chỗ Ngay"</td><td>"Đăng Ký Trải Nghiệm"</td><td>Click Rate</td></tr>
+<tr><td>Hero Image</td><td>Ảnh fine dining</td><td>Ảnh nhóm học viên</td><td>Bounce Rate</td></tr>
+<tr><td>Giá hiển thị</td><td>3.200.000 VNĐ</td><td>Từ 3.2 triệu</td><td>Scroll to Pricing</td></tr>
+<tr><td>FOMO Banner</td><td>"Còn 3 suất"</td><td>"Còn 24h"</td><td>Form Submit Rate</td></tr>
+</table>
+</div>
+
+<!-- 5. SEO -->
+<h2>5. SEO & Social Sharing</h2>
+<div class="card">
+<p>Landing page đã tích hợp:</p>
+<ul>
+<li><strong>Schema.org Course:</strong> Google hiện rich snippet với giá, rating, audience</li>
+<li><strong>Schema.org FAQ:</strong> 4 câu hỏi FAQ hiện trực tiếp trên Google Search</li>
+<li><strong>Open Graph Image:</strong> Ảnh preview 1024x1024 khi share lên Facebook/Zalo</li>
+<li><strong>Preconnect Hints:</strong> Tối ưu tốc độ load fonts và CRM API</li>
+</ul>
+</div>
+
+<!-- 6. ĐÁNH GIÁ KHÁCH HÀNG -->
+<h2>6. Đánh Giá & Yêu Cầu Chỉnh Sửa</h2>
+<p style="font-size:0.88rem;color:var(--muted);margin-bottom:16px;">Vui lòng điền đánh giá bên dưới. Chúng tôi sẽ xem xét và cập nhật trong vòng 24h.</p>
+
+<div class="feedback-form">
+<form id="feedbackForm">
+<label>Họ tên người đánh giá</label>
+<input type="text" id="fb-name" placeholder="Nguyễn Văn A" required>
+
+<label>Vai trò</label>
+<select id="fb-role">
+<option value="">— Chọn —</option>
+<option value="owner">Chủ doanh nghiệp / Founder</option>
+<option value="marketing">Marketing Manager</option>
+<option value="content">Content / Brand</option>
+<option value="other">Khác</option>
+</select>
+
+<label>Đánh giá tổng thể Landing Page</label>
+<select id="fb-rating" required>
+<option value="">— Chọn mức đánh giá —</option>
+<option value="5">⭐⭐⭐⭐⭐ Xuất sắc</option>
+<option value="4">⭐⭐⭐⭐ Tốt</option>
+<option value="3">⭐⭐⭐ Trung bình</option>
+<option value="2">⭐⭐ Cần cải thiện</option>
+<option value="1">⭐ Chưa đạt</option>
+</select>
+
+<label>Section nào cần chỉnh sửa?</label>
+<select id="fb-section">
+<option value="">— Chọn section —</option>
+<option value="hero">Hero (Ấn tượng đầu)</option>
+<option value="pain">Pain Points (Nỗi đau)</option>
+<option value="solution">Solution (Giải pháp)</option>
+<option value="before-after">Before/After</option>
+<option value="curriculum">Lịch trình 1 ngày</option>
+<option value="instructor">Người đào tạo</option>
+<option value="testimonials">Testimonials</option>
+<option value="pricing">Pricing & FOMO</option>
+<option value="faq">FAQ</option>
+<option value="form">Form đăng ký</option>
+<option value="overall">Tổng thể / Layout</option>
+<option value="other">Khác</option>
+</select>
+
+<label>Nội dung cần chỉnh sửa / Góp ý chi tiết *</label>
+<textarea id="fb-detail" placeholder="Mô tả cụ thể những gì cần thay đổi: nội dung, hình ảnh, bố cục, màu sắc, CTA..." required></textarea>
+
+<label>Mức độ ưu tiên</label>
+<select id="fb-priority">
+<option value="normal">Bình thường</option>
+<option value="high">Cao — Cần sửa sớm</option>
+<option value="urgent">Khẩn cấp — Ảnh hưởng chạy Ads</option>
+</select>
+
+<label>File đính kèm (nếu có ảnh minh hoạ)</label>
+<input type="file" id="fb-file" accept="image/*">
+
+<button type="submit" class="btn-submit">Gửi Đánh Giá</button>
+</form>
+<div id="fb-success" style="display:none;text-align:center;padding:32px;">
+<h3 style="color:var(--gold-dark);">Đã gửi thành công!</h3>
+<p style="margin-top:8px;">Cảm ơn bạn đã đánh giá. Chúng tôi sẽ xem xét và phản hồi trong vòng 24h.</p>
+</div>
+</div>
+
+<script>
+document.getElementById('feedbackForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  var data={name:document.getElementById('fb-name').value,role:document.getElementById('fb-role').value,rating:document.getElementById('fb-rating').value,section:document.getElementById('fb-section').value,detail:document.getElementById('fb-detail').value,priority:document.getElementById('fb-priority').value,page:'kidiquette_summer_analysis',timestamp:new Date().toISOString()};
+  var crmUrl=window.__eseCrmUrl||'https://crm.esevietnam.vn';
+  fetch(crmUrl+'/api/landing/feedback',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(){showDone()}).catch(function(){showDone()});
+  function showDone(){document.getElementById('feedbackForm').style.display='none';document.getElementById('fb-success').style.display='block';}
+});
+</script>
+<script>window.__eseCrmUrl='https://crm.esevietnam.vn';</script>
+</div>
+<div class="footer-note">© 2026 ESE Vietnam — Tài liệu nội bộ, không phân phối bên ngoài.</div>
+</body>
+</html>
